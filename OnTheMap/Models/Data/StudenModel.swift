@@ -58,8 +58,8 @@ class StudentModel{
                 "updatedAt" : "2015-03-13T03:37:58.389Z"
         ], [
             "createdAt" : "2015-03-11T02:48:18.321Z",
-            "firstName" : "Hamude",
-            "lastName" : "Hasun",
+            "firstName" : "Adam",
+            "lastName" : "Doe",
             "latitude" : 33.73037,
             "longitude" : -111.58611000000001,
             "mapString" : "Huntsville, Alabama",
