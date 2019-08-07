@@ -54,6 +54,7 @@
 		4A80B8C722FB54CB001722E7 /* OnTheMap */ = {
 			isa = PBXGroup;
 			children = (
+				4A80B8D422FB54CC001722E7 /* Info.plist */,
 				4A80B8DC22FB5575001722E7 /* Controllers */,
 				4A80B8DB22FB556B001722E7 /* Views */,
 				4A80B8DA22FB555B001722E7 /* Models */,
@@ -83,7 +84,6 @@
 			children = (
 				4A80B8C822FB54CB001722E7 /* AppDelegate.swift */,
 				4A80B8CA22FB54CB001722E7 /* ViewController.swift */,
-				4A80B8D422FB54CC001722E7 /* Info.plist */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
