@@ -10,7 +10,8 @@ import Foundation
 import UIKit
 
 class Utils {
-    func verifyUrl (urlString: String?) -> Bool {
+    
+    func verifyUrl(urlString: String?) -> Bool {
         if let urlString = urlString {
             if let url = NSURL(string: urlString) {
                 return UIApplication.shared.canOpenURL(url as URL)

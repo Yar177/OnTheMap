@@ -44,7 +44,12 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        var url = arrayStudentData[indexPath.row].mediaURL
+        let url = URL(string: arrayStudentData[indexPath.row].mediaURL)
+        
+        if (Utils().verifyUrl(urlString: url?.absoluteString)){
+            UIApplication.shared.open(url!)
+            
+        }
         
     }
     
