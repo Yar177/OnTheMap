@@ -46,9 +46,6 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         var url = arrayStudentData[indexPath.row].mediaURL
         
-        if url.isValidU {
-            <#code#>
-        }
     }
     
 
