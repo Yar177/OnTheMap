@@ -112,6 +112,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kX3-8r-nke"/>
                     </view>
+                    <connections>
+                        <segue destination="RXg-ZY-ahp" kind="show" identifier="logging" id="htB-sh-ZjE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BD8-oP-CjQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
