@@ -15,9 +15,17 @@ class ViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var mapView: MKMapView!
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        HTTPClient.getStudetLocation(){students, error in
+            StudentModel.students = students
+            
+            print(students)
+        }
+        
         
         mapView.delegate = self
         
