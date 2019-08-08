@@ -13,6 +13,11 @@
 		4A80B8D022FB54CC001722E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A80B8CF22FB54CC001722E7 /* Assets.xcassets */; };
 		4A80B8D322FB54CC001722E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A80B8D122FB54CC001722E7 /* LaunchScreen.storyboard */; };
 		4A80B8E222FB632B001722E7 /* StudenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A80B8E122FB632B001722E7 /* StudenModel.swift */; };
+		9A84C41C22FBCE36000F3CE8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84C41B22FBCE36000F3CE8 /* LoginViewController.swift */; };
+		9AA7454322FBD8DB00E6EA92 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA7453F22FBD8DB00E6EA92 /* GradientView.swift */; };
+		9AA7454422FBD8DB00E6EA92 /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA7454022FBD8DB00E6EA92 /* LoginTextField.swift */; };
+		9AA7454522FBD8DB00E6EA92 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA7454122FBD8DB00E6EA92 /* LoginButton.swift */; };
+		9AA7454622FBD8DB00E6EA92 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA7454222FBD8DB00E6EA92 /* Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		4A80B8D222FB54CC001722E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A80B8D422FB54CC001722E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A80B8E122FB632B001722E7 /* StudenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudenModel.swift; sourceTree = "<group>"; };
+		9A84C41B22FBCE36000F3CE8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		9AA7453F22FBD8DB00E6EA92 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GradientView.swift; path = ../../../../iOSAuth/TheMovieManager/View/GradientView.swift; sourceTree = "<group>"; };
+		9AA7454022FBD8DB00E6EA92 /* LoginTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginTextField.swift; path = ../../../../iOSAuth/TheMovieManager/View/LoginTextField.swift; sourceTree = "<group>"; };
+		9AA7454122FBD8DB00E6EA92 /* LoginButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginButton.swift; path = ../../../../iOSAuth/TheMovieManager/View/LoginButton.swift; sourceTree = "<group>"; };
+		9AA7454222FBD8DB00E6EA92 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Colors.swift; path = ../../../../iOSAuth/TheMovieManager/View/Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +88,10 @@
 		4A80B8DB22FB556B001722E7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9AA7454222FBD8DB00E6EA92 /* Colors.swift */,
+				9AA7453F22FBD8DB00E6EA92 /* GradientView.swift */,
+				9AA7454122FBD8DB00E6EA92 /* LoginButton.swift */,
+				9AA7454022FBD8DB00E6EA92 /* LoginTextField.swift */,
 				4A80B8CC22FB54CB001722E7 /* Main.storyboard */,
 				4A80B8D122FB54CC001722E7 /* LaunchScreen.storyboard */,
 				4A80B8CF22FB54CC001722E7 /* Assets.xcassets */,
@@ -90,6 +104,7 @@
 			children = (
 				4A80B8C822FB54CB001722E7 /* AppDelegate.swift */,
 				4A80B8CA22FB54CB001722E7 /* ViewController.swift */,
+				9A84C41B22FBCE36000F3CE8 /* LoginViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -194,7 +209,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A84C41C22FBCE36000F3CE8 /* LoginViewController.swift in Sources */,
+				9AA7454622FBD8DB00E6EA92 /* Colors.swift in Sources */,
 				4A80B8E222FB632B001722E7 /* StudenModel.swift in Sources */,
+				9AA7454522FBD8DB00E6EA92 /* LoginButton.swift in Sources */,
+				9AA7454322FBD8DB00E6EA92 /* GradientView.swift in Sources */,
+				9AA7454422FBD8DB00E6EA92 /* LoginTextField.swift in Sources */,
 				4A80B8CB22FB54CB001722E7 /* ViewController.swift in Sources */,
 				4A80B8C922FB54CB001722E7 /* AppDelegate.swift in Sources */,
 			);
