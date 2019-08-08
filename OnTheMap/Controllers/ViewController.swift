@@ -19,37 +19,45 @@ class ViewController: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-        HTTPClient.getStudetLocation(){students, error in
-            StudentModel.students = students
-            
-            print(students)
-        }
-        
-        
         mapView.delegate = self
+        HTTPClient.getStudentsLocation(completionHandeler: {(data, error) in
+            guard let data = data else {
+                return
+            }
+            StudentsLocationData.studentsData = data
+            self.deployDataToMap()
+        })
         
-        let locations = StudentModel.studentData
+        
+        
+        
+    }
+    
+    func deployDataToMap(){
+        let locations = StudentsLocationData.studentsData
         
         var annotations = [MKPointAnnotation]()
         
-        for dictionary in locations {
-            let lat = CLLocationDegrees(dictionary["latitude"] as! Double)
-            let lang = CLLocationDegrees(dictionary["longitude"] as! Double)
+        for student in locations {
+            //let lat = CLLocationDegrees(dictionary["latitude"] as! Double)
+            // let lang = CLLocationDegrees(dictionary["longitude"] as! Double)
+            let lat = CLLocationDegrees(student.latitude)
+            let lang = CLLocationDegrees(student.longitude)
             let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: lang)
-            let first = dictionary["firstName"] as! String
-            let last = dictionary["lastName"] as! String
-            let mediaURL = dictionary["mediaURL"] as! String
+            
+            let first = student.firstName
+            let last = student.lastName
+            let mediaURL = student.mediaURL
+            
+            print("coordinate =======>: \(lat) \(lang)")
+            print("name =======>: \(first) \(last)")
             
             let annotation = MKPointAnnotation()
             annotation.coordinate = coordinate
             annotation.title = "\(first) \(last)"
             annotation.subtitle = mediaURL
-            
             annotations.append(annotation)
-            
         }
-        
         self.mapView.addAnnotations(annotations)
     }
     

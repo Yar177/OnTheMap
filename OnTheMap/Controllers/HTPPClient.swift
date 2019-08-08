@@ -22,63 +22,95 @@ class HTTPClient {
     
     enum Endpoints {
         static let base = "https://onthemap-api.udacity.com/v1/"
-        static let apiKeyParam = "?api_key=bdddad458636a0f190525a289c764e96"
         
-        case getWatchlist
-        case getRequestToken
-        case login
-        case newSession
-        case webAuth
+        case establishSession
+        case getStudentsLocation
+        case postStudentLocation
+        case updateStudentLocation (String)
+        case getUserData
         case logout
-        case getFavorites
-        case search(String)
-        case markWatchlist
-        case markFavorite
-        case posterImageURL(String)
         
-        
-        var stringValue: String {
+        var urlBody: String {
             switch self {
-            case .getWatchlist: return Endpoints.base + "/account/\(Auth.accountId)/watchlist/movies" + Endpoints.apiKeyParam + "&session_id=\(Auth.sessionId)"
-            case .getRequestToken: return Endpoints.base + "/authentication/token/new" + Endpoints.apiKeyParam
-            case .login: return Endpoints.base + "/authentication/token/validate_with_login" + Endpoints.apiKeyParam
-            case .newSession: return Endpoints.base + "/authentication/session/new" + Endpoints.apiKeyParam
-            case .webAuth: return "https://www.themoviedb.org/authenticate/" + Auth.requestToken + "?redirect_to=themoviemanager:authenticate"
-            case .logout: return Endpoints.base + "/authentication/session" + Endpoints.apiKeyParam
-            case .getFavorites: return Endpoints.base + "/account/0/favorite/movies" + Endpoints.apiKeyParam + "&session_id=\(Auth.sessionId)"
-            case .search(let query): return Endpoints.base + "/search/movie" + Endpoints.apiKeyParam + "&query=\(query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")"
-            case .markWatchlist: return Endpoints.base + "/account/\(Auth.accountId)/watchlist"  + Endpoints.apiKeyParam + "&session_id=\(Auth.sessionId)"
-            case .markFavorite: return Endpoints.base + "/account/\(Auth.accountId)/favorite" + Endpoints.apiKeyParam + "&session_id=\(Auth.sessionId)"
-            case .posterImageURL(let img): return "https://image.tmdb.org/t/p/w500/" + img
-                
-                
+            case .establishSession: return Endpoints.base + "session"
+            case .getStudentsLocation: return Endpoints.base + "StudentLocation?order=-updatedAt&limit=100"
+            case .postStudentLocation: return Endpoints.base + "StudentLocation"
+            case .updateStudentLocation(let objectID): return Endpoints.base + "StudentLocation/\(objectID)"
+            case .getUserData: return Endpoints.base + "users/" + Auth.requestToken
+            case .logout: return Endpoints.base + "session"
             }
         }
         
         var url: URL {
-            return URL(string: stringValue)!
+            return URL(string: urlBody)!
         }
     }
     
     
-    class func getStudetLocation(completion: @escaping ([Student] , Error?) -> Void){
-        
-        let urlString = "https://onthemap-api.udacity.com/v1/StudentLocation?limit=3"
-        
-        let url = URL(string: urlString)
-        let request = URLRequest(url: url!)
-        let session = URLSession.shared
-        let task = session.dataTask(with: request){data, response, error in
-            
-            if error != nil{
+//    class func getStudetLocationXXX(completion: @escaping ([StudentLocation] , Error?) -> Void){
+//
+//        let urlString = "https://onthemap-api.udacity.com/v1/StudentLocation?limit=3"
+//
+//        let url = URL(string: urlString)
+//        let request = URLRequest(url: url!)
+//        let session = URLSession.shared
+//        let task = session.dataTask(with: request){data, response, error in
+//
+//            guard let data = data else {
+//                DispatchQueue.main.async {
+//                    completion([], error)
+//                }
+//                return
+//            }
+//
+//            //print(String(data: data, encoding: .utf8)!)
+//
+//            let decoder = JSONDecoder()
+//
+//            do{
+//                let requestObject = try decoder.decode(StudentLocationData.self, from: data)
+//                DispatchQueue.main.async {
+//                    completion(requestObject.results, nil)
+//                }
+//
+//            } catch {
+//                DispatchQueue.main.async {
+//                    completion([], error)
+//                    print(error.localizedDescription)
+//                }
+//            }
+//        }
+//        task.resume()
+//
+//
+//    }
+    
+    
+    
+    class func getStudentsLocation(completionHandeler: @escaping ([StudentLocation]?, Error?)-> Void){
+        let task = URLSession.shared.dataTask(with: Endpoints.getStudentsLocation.url){ (data, response, error) in
+            guard let data = data else {
+                DispatchQueue.main.async {
+                    completionHandeler([], error)
+                }
                 return
             }
-            print(String(data: data!, encoding: .utf8)!)
+            let decoder = JSONDecoder()
+            do {
+                let requestObject = try decoder.decode(Results.self, from: data)
+                DispatchQueue.main.async {
+                    completionHandeler(requestObject.results, nil)
+                }
+            }catch {
+                DispatchQueue.main.async {
+                    completionHandeler([], error)
+                }
+            }
         }
         task.resume()
-        
-        
     }
+    
+    
     
     
     
