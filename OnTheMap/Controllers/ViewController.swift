@@ -24,7 +24,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
             guard let data = data else {
                 return
             }
-            StudentsLocationData.studentsData = data
+            StudentsLocationDataModel.studentsData = data
             self.deployDataToMap()
         })
         
@@ -34,7 +34,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
     }
     
     func deployDataToMap(){
-        let locations = StudentsLocationData.studentsData
+        let locations = StudentsLocationDataModel.studentsData
         
         var annotations = [MKPointAnnotation]()
         
@@ -44,14 +44,10 @@ class ViewController: UIViewController, MKMapViewDelegate {
             let lat = CLLocationDegrees(student.latitude)
             let lang = CLLocationDegrees(student.longitude)
             let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: lang)
-            
             let first = student.firstName
             let last = student.lastName
             let mediaURL = student.mediaURL
-            
-            print("coordinate =======>: \(lat) \(lang)")
-            print("name =======>: \(first) \(last)")
-            
+           
             let annotation = MKPointAnnotation()
             annotation.coordinate = coordinate
             annotation.title = "\(first) \(last)"

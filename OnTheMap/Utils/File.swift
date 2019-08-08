@@ -1,5 +1,5 @@
 //
-//  StudentsLocationData.swift
+//  File.swift
 //  OnTheMap
 //
 //  Created by Hoshiar Sher on 8/8/19.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class StudentsLocationData {
+
+class Utils {
     
-    static var studentsData = [StudentLocation]()
 }

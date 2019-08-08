@@ -9,9 +9,9 @@
 import Foundation
 
 
-struct Results: Codable {
+struct ResultsModel: Codable {
     
-    let results: [StudentLocation]
+    let results: [StudentLocationModel]
     
     enum CodingKeys: String, CodingKey {
         case results

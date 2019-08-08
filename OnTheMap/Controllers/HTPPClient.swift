@@ -87,7 +87,7 @@ class HTTPClient {
     
     
     
-    class func getStudentsLocation(completionHandeler: @escaping ([StudentLocation]?, Error?)-> Void){
+    class func getStudentsLocation(completionHandeler: @escaping ([StudentLocationModel]?, Error?)-> Void){
         let task = URLSession.shared.dataTask(with: Endpoints.getStudentsLocation.url){ (data, response, error) in
             guard let data = data else {
                 DispatchQueue.main.async {
@@ -97,7 +97,7 @@ class HTTPClient {
             }
             let decoder = JSONDecoder()
             do {
-                let requestObject = try decoder.decode(Results.self, from: data)
+                let requestObject = try decoder.decode(ResultsModel.self, from: data)
                 DispatchQueue.main.async {
                     completionHandeler(requestObject.results, nil)
                 }

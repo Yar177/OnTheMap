@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct StudentLocation: Codable {
+struct StudentLocationModel: Codable {
     
     let createdAt: String
     let firstName: String
