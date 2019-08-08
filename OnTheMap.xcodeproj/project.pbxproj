@@ -18,6 +18,7 @@
 		9AA7454422FBD8DB00E6EA92 /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA7454022FBD8DB00E6EA92 /* LoginTextField.swift */; };
 		9AA7454522FBD8DB00E6EA92 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA7454122FBD8DB00E6EA92 /* LoginButton.swift */; };
 		9AA7454622FBD8DB00E6EA92 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA7454222FBD8DB00E6EA92 /* Colors.swift */; };
+		9AA7454822FBDAB300E6EA92 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AA7454722FBDAB200E6EA92 /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		9AA7454022FBD8DB00E6EA92 /* LoginTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginTextField.swift; path = ../../../../iOSAuth/TheMovieManager/View/LoginTextField.swift; sourceTree = "<group>"; };
 		9AA7454122FBD8DB00E6EA92 /* LoginButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginButton.swift; path = ../../../../iOSAuth/TheMovieManager/View/LoginButton.swift; sourceTree = "<group>"; };
 		9AA7454222FBD8DB00E6EA92 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Colors.swift; path = ../../../../iOSAuth/TheMovieManager/View/Colors.swift; sourceTree = "<group>"; };
+		9AA7454722FBDAB200E6EA92 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Colors.xcassets; path = ../../../../iOSAuth/TheMovieManager/Assets/Colors.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 				4A80B8CC22FB54CB001722E7 /* Main.storyboard */,
 				4A80B8D122FB54CC001722E7 /* LaunchScreen.storyboard */,
 				4A80B8CF22FB54CC001722E7 /* Assets.xcassets */,
+				9AA7454722FBDAB200E6EA92 /* Colors.xcassets */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A80B8D322FB54CC001722E7 /* LaunchScreen.storyboard in Resources */,
+				9AA7454822FBDAB300E6EA92 /* Colors.xcassets in Resources */,
 				4A80B8D022FB54CC001722E7 /* Assets.xcassets in Resources */,
 				4A80B8CE22FB54CB001722E7 /* Main.storyboard in Resources */,
 			);
