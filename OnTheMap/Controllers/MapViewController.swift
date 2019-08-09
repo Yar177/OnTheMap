@@ -26,7 +26,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             deleteButton.frame.size.width = 44
             deleteButton.frame.size.height = 44
             deleteButton.backgroundColor = UIColor.red
-            deleteButton.setImage(UIImage(named: "trash"), for: [])
+            deleteButton.setImage(UIImage(named: "placeholder3"), for: [])
             
             pinAnnotationView.leftCalloutAccessoryView = deleteButton
             

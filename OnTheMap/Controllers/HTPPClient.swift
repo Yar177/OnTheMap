@@ -92,6 +92,8 @@ class HTTPClient {
             guard let data = data else {
                 DispatchQueue.main.async {
                     completionHandeler([], error)
+                    print("error 1")
+                    print(error)
                 }
                 return
             }
@@ -100,10 +102,14 @@ class HTTPClient {
                 let requestObject = try decoder.decode(ResultsModel.self, from: data)
                 DispatchQueue.main.async {
                     completionHandeler(requestObject.results, nil)
+                    print("http")
+                    print(requestObject.results)
                 }
             }catch {
                 DispatchQueue.main.async {
                     completionHandeler([], error)
+                    print("error 2")
+                    print(error)
                 }
             }
         }
