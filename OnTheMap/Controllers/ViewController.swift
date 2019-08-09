@@ -35,6 +35,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
     
     func deployDataToMap(){
         let locations = StudentsLocationDataModel.studentsData
+        print(locations)
         
         var annotations = [MKPointAnnotation]()
         
@@ -47,14 +48,27 @@ class ViewController: UIViewController, MKMapViewDelegate {
             let first = student.firstName
             let last = student.lastName
             let mediaURL = student.mediaURL
+            
            
-            let annotation = MKPointAnnotation()
-            annotation.coordinate = coordinate
-            annotation.title = "\(first) \(last)"
-            annotation.subtitle = mediaURL
-            annotations.append(annotation)
+//            let annotation = MKPointAnnotation()
+//            annotation.coordinate = coordinate
+//            annotation.title = "\(first) \(last)"
+//            annotation.subtitle = mediaURL
+//            annotations.append(annotation)
+            
+            let pinAnnotation = PinAnnotation()
+            pinAnnotation.setCoordinate(newCoordinate: coordinate)
+            pinAnnotation.title = "\(first) \(last)"
+            pinAnnotation.subtitle = mediaURL
+
+            self.mapView.addAnnotation(pinAnnotation)
+            
         }
-        self.mapView.addAnnotations(annotations)
+        
+        
+     
+            
+       // self.mapView.addAnnotations(annotations)
     }
     
     

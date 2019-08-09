@@ -45,46 +45,7 @@ class HTTPClient {
             return URL(string: urlBody)!
         }
     }
-    
-    
-//    class func getStudetLocationXXX(completion: @escaping ([StudentLocation] , Error?) -> Void){
-//
-//        let urlString = "https://onthemap-api.udacity.com/v1/StudentLocation?limit=3"
-//
-//        let url = URL(string: urlString)
-//        let request = URLRequest(url: url!)
-//        let session = URLSession.shared
-//        let task = session.dataTask(with: request){data, response, error in
-//
-//            guard let data = data else {
-//                DispatchQueue.main.async {
-//                    completion([], error)
-//                }
-//                return
-//            }
-//
-//            //print(String(data: data, encoding: .utf8)!)
-//
-//            let decoder = JSONDecoder()
-//
-//            do{
-//                let requestObject = try decoder.decode(StudentLocationData.self, from: data)
-//                DispatchQueue.main.async {
-//                    completion(requestObject.results, nil)
-//                }
-//
-//            } catch {
-//                DispatchQueue.main.async {
-//                    completion([], error)
-//                    print(error.localizedDescription)
-//                }
-//            }
-//        }
-//        task.resume()
-//
-//
-//    }
-    
+
     
     
     class func getStudentsLocation(completionHandeler: @escaping ([StudentLocationModel]?, Error?)-> Void){
@@ -92,6 +53,7 @@ class HTTPClient {
             guard let data = data else {
                 DispatchQueue.main.async {
                     completionHandeler([], error)
+                  
                 }
                 return
             }
@@ -100,10 +62,14 @@ class HTTPClient {
                 let requestObject = try decoder.decode(ResultsModel.self, from: data)
                 DispatchQueue.main.async {
                     completionHandeler(requestObject.results, nil)
+                    print("http")
+                    print(requestObject.results)
                 }
             }catch {
                 DispatchQueue.main.async {
                     completionHandeler([], error)
+                    print("error 2")
+                    print(error)
                 }
             }
         }
