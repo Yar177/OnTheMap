@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A041ED322FD9AF300E3AFE4 /* PinAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A041ED222FD9AF300E3AFE4 /* PinAnnotation.swift */; };
+		4A041ED522FD9CD300E3AFE4 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A041ED422FD9CD300E3AFE4 /* MapViewController.swift */; };
 		4A80B8C922FB54CB001722E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A80B8C822FB54CB001722E7 /* AppDelegate.swift */; };
 		4A80B8CB22FB54CB001722E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A80B8CA22FB54CB001722E7 /* ViewController.swift */; };
 		4A80B8CE22FB54CB001722E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A80B8CC22FB54CB001722E7 /* Main.storyboard */; };
@@ -24,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A041ED222FD9AF300E3AFE4 /* PinAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinAnnotation.swift; sourceTree = "<group>"; };
+		4A041ED422FD9CD300E3AFE4 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		4A80B8C522FB54CB001722E7 /* OnTheMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnTheMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A80B8C822FB54CB001722E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A80B8CA22FB54CB001722E7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +114,8 @@
 				4A80B8CA22FB54CB001722E7 /* ViewController.swift */,
 				9A84C41B22FBCE36000F3CE8 /* LoginViewController.swift */,
 				4AEFD52A22FC9AB2005F7971 /* TableViewController.swift */,
+				4A041ED222FD9AF300E3AFE4 /* PinAnnotation.swift */,
+				4A041ED422FD9CD300E3AFE4 /* MapViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -227,12 +233,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A041ED322FD9AF300E3AFE4 /* PinAnnotation.swift in Sources */,
 				4AEFD52522FC921C005F7971 /* StudentLocationModel.swift in Sources */,
 				9A84C41C22FBCE36000F3CE8 /* LoginViewController.swift in Sources */,
 				4AEFD52922FC9491005F7971 /* StudentsLocationDataModel.swift in Sources */,
 				4A80B8E222FB632B001722E7 /* StudenModel.swift in Sources */,
 				4AEFD52722FC932A005F7971 /* ResultsModel.swift in Sources */,
 				4AEFD52E22FCC8DC005F7971 /* Utils.swift in Sources */,
+				4A041ED522FD9CD300E3AFE4 /* MapViewController.swift in Sources */,
 				4A80B8CB22FB54CB001722E7 /* ViewController.swift in Sources */,
 				9AA7454A22FBE46A00E6EA92 /* HTPPClient.swift in Sources */,
 				4AEFD52B22FC9AB2005F7971 /* TableViewController.swift in Sources */,
