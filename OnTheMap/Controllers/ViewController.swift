@@ -62,7 +62,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
             pinAnnotation.subtitle = mediaURL
 
             self.mapView.addAnnotation(pinAnnotation)
-            print("added")
+            print(coordinate)
         }
        // self.mapView.addAnnotations(annotations)
     }

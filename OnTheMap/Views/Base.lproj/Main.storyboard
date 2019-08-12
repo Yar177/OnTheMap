@@ -86,7 +86,7 @@
         <scene sceneID="5ra-mB-GXR">
             <objects>
                 <viewController id="laS-2E-j2N" customClass="LoginViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="NY4-mv-qQy">
+                    <view key="view" alpha="0.84999999999999998" contentMode="scaleToFill" id="NY4-mv-qQy" customClass="ViewX" customModule="OnTheMap" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -131,12 +131,22 @@
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="kX3-8r-nke" firstAttribute="trailing" secondItem="8zl-07-zRO" secondAttribute="trailing" constant="22" id="M2N-6r-VBj"/>
                             <constraint firstItem="8zl-07-zRO" firstAttribute="leading" secondItem="kX3-8r-nke" secondAttribute="leading" constant="22" id="hU8-Ab-UGS"/>
                             <constraint firstItem="8zl-07-zRO" firstAttribute="top" secondItem="kX3-8r-nke" secondAttribute="top" constant="200" id="olD-sa-hH3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kX3-8r-nke"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
+                                <color key="value" red="0.59491494349999996" green="1" blue="0.53250915460000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
+                                <color key="value" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="horizontalGradient" value="YES"/>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
                         <segue destination="RXg-ZY-ahp" kind="show" identifier="logging" id="htB-sh-ZjE"/>
