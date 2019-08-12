@@ -17,6 +17,8 @@
 		4A041EE12301A49A00E3AFE4 /* ViewX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A041EE02301A49A00E3AFE4 /* ViewX.swift */; };
 		4A041EE32301B23900E3AFE4 /* AddNewLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A041EE22301B23900E3AFE4 /* AddNewLocationViewController.swift */; };
 		4A041EE52301B8C000E3AFE4 /* AddPinAndLinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A041EE42301B8C000E3AFE4 /* AddPinAndLinkViewController.swift */; };
+		4A041EE72301D43B00E3AFE4 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A041EE62301D43B00E3AFE4 /* LoginModel.swift */; };
+		4A041EE92301D5F900E3AFE4 /* LoginResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A041EE82301D5F800E3AFE4 /* LoginResponseModel.swift */; };
 		4A80B8C922FB54CB001722E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A80B8C822FB54CB001722E7 /* AppDelegate.swift */; };
 		4A80B8CB22FB54CB001722E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A80B8CA22FB54CB001722E7 /* ViewController.swift */; };
 		4A80B8CE22FB54CB001722E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A80B8CC22FB54CB001722E7 /* Main.storyboard */; };
@@ -44,6 +46,8 @@
 		4A041EE02301A49A00E3AFE4 /* ViewX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewX.swift; path = ../../../SwiftAnimation/SwiftAnimation/graphics/ViewX.swift; sourceTree = "<group>"; };
 		4A041EE22301B23900E3AFE4 /* AddNewLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewLocationViewController.swift; sourceTree = "<group>"; };
 		4A041EE42301B8C000E3AFE4 /* AddPinAndLinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPinAndLinkViewController.swift; sourceTree = "<group>"; };
+		4A041EE62301D43B00E3AFE4 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		4A041EE82301D5F800E3AFE4 /* LoginResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseModel.swift; sourceTree = "<group>"; };
 		4A80B8C522FB54CB001722E7 /* OnTheMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnTheMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A80B8C822FB54CB001722E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A80B8CA22FB54CB001722E7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -165,6 +169,8 @@
 				4AEFD52422FC921C005F7971 /* StudentLocationModel.swift */,
 				4AEFD52622FC932A005F7971 /* ResultsModel.swift */,
 				4AEFD52822FC9491005F7971 /* StudentsLocationDataModel.swift */,
+				4A041EE62301D43B00E3AFE4 /* LoginModel.swift */,
+				4A041EE82301D5F800E3AFE4 /* LoginResponseModel.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -263,6 +269,7 @@
 				4A041EE52301B8C000E3AFE4 /* AddPinAndLinkViewController.swift in Sources */,
 				4AEFD52522FC921C005F7971 /* StudentLocationModel.swift in Sources */,
 				9A84C41C22FBCE36000F3CE8 /* LoginViewController.swift in Sources */,
+				4A041EE72301D43B00E3AFE4 /* LoginModel.swift in Sources */,
 				4AEFD52922FC9491005F7971 /* StudentsLocationDataModel.swift in Sources */,
 				4A041EDB2301A31C00E3AFE4 /* GradientView.swift in Sources */,
 				4A80B8E222FB632B001722E7 /* StudenModel.swift in Sources */,
@@ -272,6 +279,7 @@
 				4A041EDD2301A31C00E3AFE4 /* Colors.swift in Sources */,
 				4A041EDC2301A31C00E3AFE4 /* LoginTextField.swift in Sources */,
 				4A80B8CB22FB54CB001722E7 /* ViewController.swift in Sources */,
+				4A041EE92301D5F900E3AFE4 /* LoginResponseModel.swift in Sources */,
 				9AA7454A22FBE46A00E6EA92 /* HTPPClient.swift in Sources */,
 				4AEFD52B22FC9AB2005F7971 /* TableViewController.swift in Sources */,
 				4A80B8C922FB54CB001722E7 /* AppDelegate.swift in Sources */,
