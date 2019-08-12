@@ -132,6 +132,47 @@ class HTTPClient {
         task.resume()
     }
     
+    
+    class func logout(complition: @escaping (Bool, Error?) -> Void){
+        var request = URLRequest(url: Endpoints.logout.url)
+        
+        request.httpMethod = "DELETE"
+        var xsrfCookie: HTTPCookie? = nil
+        let sharedCookieStorage = HTTPCookieStorage.shared
+        for cookie in sharedCookieStorage.cookies!{
+            if cookie.name == "XSRF-TOKEN" {xsrfCookie = cookie}
+        }
+        
+        if let xsrfCookie = xsrfCookie {
+            request.setValue(xsrfCookie.value, forHTTPHeaderField: "X-XSRF-TOKEN")
+        }
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data else {
+                DispatchQueue.main.async {
+                    return complition(false, error)
+                }
+                return
+            }
+            let acutalData = data.subdata(in: 5..<data.count)
+            let jsonDecoder = JSONDecoder()
+            do{
+                let responseObject = try jsonDecoder.decode(EndSessionModel.self, from: acutalData)
+                    DispatchQueue.main.async {
+                        self.Auth.sessionId = ""
+                        self.Auth.keyAccount = ""
+                        complition(true, nil)
+                    }
+            }catch{
+                DispatchQueue.main.async {
+                    complition(false, error)
+                }
+            }
+        }
+        task.resume()
+        
+    }
+    
     class func updateLocation(id: String, userInfo: NewLocationModel, completion: @escaping (Bool, Error?) -> Void) {
         var request = URLRequest(url: Endpoints.updateLocation(id).url)
         request.httpMethod = "PUT"
