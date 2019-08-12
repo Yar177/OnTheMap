@@ -35,9 +35,9 @@ class ViewController: UIViewController, MKMapViewDelegate {
     
     func deployDataToMap(){
         let locations = StudentsLocationDataModel.studentsData
-        print(locations)
+       // print(locations)
         
-        var annotations = [MKPointAnnotation]()
+      //  var annotations = [MKPointAnnotation]()
         
         for student in locations {
             //let lat = CLLocationDegrees(dictionary["latitude"] as! Double)
@@ -62,12 +62,8 @@ class ViewController: UIViewController, MKMapViewDelegate {
             pinAnnotation.subtitle = mediaURL
 
             self.mapView.addAnnotation(pinAnnotation)
-            
+            print("added")
         }
-        
-        
-     
-            
        // self.mapView.addAnnotations(annotations)
     }
     

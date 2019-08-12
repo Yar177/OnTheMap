@@ -62,8 +62,7 @@ class HTTPClient {
                 let requestObject = try decoder.decode(ResultsModel.self, from: data)
                 DispatchQueue.main.async {
                     completionHandeler(requestObject.results, nil)
-                    print("http")
-                    print(requestObject.results)
+                    
                 }
             }catch {
                 DispatchQueue.main.async {
