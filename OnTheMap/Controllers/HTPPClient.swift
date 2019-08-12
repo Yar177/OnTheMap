@@ -74,6 +74,93 @@ class HTTPClient {
         task.resume()
     }
     
+    class func addNewLocation(locationData: NewLocationModel, completion: @escaping (NewLocationResponseModel?, Error?) -> Void) {
+        var request = URLRequest(url: Endpoints.addNewLocation.url)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        let requestBody = locationData
+        let encoder = JSONEncoder()
+        request.httpBody = try! encoder.encode(requestBody)
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data else{
+                DispatchQueue.main.async {
+                    completion(nil, error)
+                }
+                return
+            }
+            
+            let decoder = JSONDecoder()
+            do{
+                let responseObject = try decoder.decode(NewLocationResponseModel.self, from: data)
+                DispatchQueue.main.async {
+                    completion(responseObject, nil)
+                }
+            }catch{
+                DispatchQueue.main.async {
+                    completion(nil, error)
+                }
+            }
+        }
+        task.resume()
+        
+    }
+    
+    
+    
+    class func getUserInfo(completion: @escaping (UserInformationModel?, Error?) -> Void){
+        let task = URLSession.shared.dataTask(with: Endpoints.getUserInfo.url){ data, response, error in
+            
+            guard let data = data else {
+                DispatchQueue.main.async {
+                    completion(nil, error)
+                }
+                return
+            }
+            let acutalData = data.subdata(in: 5..<data.count)
+            let decoder = JSONDecoder()
+            do{
+                let responseObject = try decoder.decode(UserInformationModel.self, from: acutalData)
+                DispatchQueue.main.async {
+                    completion(responseObject, nil)
+                }
+            } catch{
+                DispatchQueue.main.async {
+                    completion(nil, error)
+                }
+            }
+        }
+        task.resume()
+    }
+    
+    class func updateLocation(id: String, userInfo: NewLocationModel, completion: @escaping (Bool, Error?) -> Void) {
+        var request = URLRequest(url: Endpoints.updateLocation(id).url)
+        request.httpMethod = "PUT"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let requestBody = userInfo
+        request.httpBody = try! JSONEncoder().encode(requestBody)
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data else {
+                DispatchQueue.main.async {
+                    return completion(false, error)
+                }
+                return
+            }
+            let decoder = JSONDecoder()
+            do{
+                let responseObject = try decoder.decode(UpdatedLocationResponse.self, from: data)
+                DispatchQueue.main.async {
+                    completion(true, nil)
+                }
+            }catch{
+                DispatchQueue.main.async {
+                    completion(false, error)
+                }
+            }
+        }
+        task.resume()
+    }
+    
     
     class func startSession(username: String, password: String, completion: @escaping(Bool, Error?) -> Void){
         
