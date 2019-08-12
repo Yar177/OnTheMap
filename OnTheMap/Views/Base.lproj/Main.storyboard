@@ -18,16 +18,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cCt-Tq-U6h">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="On The Map" id="kgZ-Gb-5fG">
+                                        <barButtonItem key="leftBarButtonItem" title="addPin" image="icon_addpin" id="gCa-Gm-PeH"/>
+                                        <barButtonItem key="rightBarButtonItem" title="refresh" image="icon_refresh" id="0ix-3i-Yih"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="UGZ-FM-L97">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="UGZ-FM-L97" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="2uT-3p-D7q"/>
-                            <constraint firstItem="UGZ-FM-L97" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="IsR-2u-Sf9"/>
-                            <constraint firstItem="UGZ-FM-L97" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Zxs-49-HVV"/>
-                            <constraint firstItem="UGZ-FM-L97" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="ggj-XA-NV3"/>
+                            <constraint firstItem="cCt-Tq-U6h" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="63I-fh-tJJ"/>
+                            <constraint firstItem="UGZ-FM-L97" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="FbQ-vg-vMA"/>
+                            <constraint firstItem="cCt-Tq-U6h" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="OkB-Oh-gOJ"/>
+                            <constraint firstItem="UGZ-FM-L97" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cQd-Xr-Scc"/>
+                            <constraint firstItem="cCt-Tq-U6h" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="lJ2-ph-wRt"/>
+                            <constraint firstItem="UGZ-FM-L97" firstAttribute="top" secondItem="cCt-Tq-U6h" secondAttribute="bottom" id="nJV-RJ-4oz"/>
+                            <constraint firstItem="UGZ-FM-L97" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="tkM-JB-d87"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -38,7 +50,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-530" y="42"/>
+            <point key="canvasLocation" x="-530.43478260869574" y="41.517857142857139"/>
         </scene>
         <!--List View-->
         <scene sceneID="t10-Oo-grV">
@@ -48,8 +60,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5AU-zH-Ewe">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="Bg4-df-LIp">
+                                        <barButtonItem key="leftBarButtonItem" title="addPin" image="icon_addpin" id="IFQ-A7-ykg"/>
+                                        <barButtonItem key="rightBarButtonItem" title="refresh" image="icon_refresh" id="zD2-L6-VQh"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3hQ-gh-xfe">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tableCell" id="ZTf-Gd-rI1">
@@ -69,10 +90,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="3hQ-gh-xfe" firstAttribute="top" secondItem="7Fm-bE-1is" secondAttribute="top" id="Gnc-iT-lCi"/>
-                            <constraint firstItem="3hQ-gh-xfe" firstAttribute="bottom" secondItem="7Fm-bE-1is" secondAttribute="bottom" id="QiR-K9-Kb6"/>
-                            <constraint firstItem="3hQ-gh-xfe" firstAttribute="leading" secondItem="7Fm-bE-1is" secondAttribute="leading" id="f33-xv-OTV"/>
-                            <constraint firstItem="3hQ-gh-xfe" firstAttribute="trailing" secondItem="7Fm-bE-1is" secondAttribute="trailing" id="xLf-YO-cRb"/>
+                            <constraint firstItem="3hQ-gh-xfe" firstAttribute="trailing" secondItem="7Fm-bE-1is" secondAttribute="trailing" id="3W2-ah-xkQ"/>
+                            <constraint firstItem="5AU-zH-Ewe" firstAttribute="trailing" secondItem="7Fm-bE-1is" secondAttribute="trailing" id="Bjh-gv-UOh"/>
+                            <constraint firstItem="3hQ-gh-xfe" firstAttribute="leading" secondItem="7Fm-bE-1is" secondAttribute="leading" id="Mtp-TK-EaJ"/>
+                            <constraint firstItem="3hQ-gh-xfe" firstAttribute="top" secondItem="5AU-zH-Ewe" secondAttribute="bottom" id="VcL-Se-ZT9"/>
+                            <constraint firstItem="3hQ-gh-xfe" firstAttribute="bottom" secondItem="7Fm-bE-1is" secondAttribute="bottom" id="W0E-rs-WBl"/>
+                            <constraint firstItem="5AU-zH-Ewe" firstAttribute="leading" secondItem="7Fm-bE-1is" secondAttribute="leading" id="b0k-Hx-HMc"/>
+                            <constraint firstItem="5AU-zH-Ewe" firstAttribute="top" secondItem="7Fm-bE-1is" secondAttribute="top" id="x5g-5G-C0u"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7Fm-bE-1is"/>
                     </view>
@@ -154,7 +178,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BD8-oP-CjQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2647" y="-468"/>
+            <point key="canvasLocation" x="-2647.826086956522" y="-468.08035714285711"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="eiG-Ax-1Wi">
@@ -176,6 +200,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icon_addpin" width="24" height="24"/>
+        <image name="icon_refresh" width="24" height="24"/>
         <image name="icons8-list-20" width="20" height="20"/>
         <image name="icons8-map-marker-20" width="20" height="20"/>
     </resources>
