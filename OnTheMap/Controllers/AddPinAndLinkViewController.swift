@@ -11,11 +11,18 @@ import UIKit
 import MapKit
 
 class AddPinAndLinkViewController: UIViewController{
+    
     @IBOutlet weak var userUrlText: UITextField!
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var submitButton: UIButton!
+    
+    var location = "Rochester, New York"
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        submitButton.isEnabled = false
     }
     
     
@@ -29,5 +36,28 @@ class AddPinAndLinkViewController: UIViewController{
          dismiss(animated: true, completion: nil)
         
     }
+    
+    func findLocation(location: String){
+        
+    }
+    
+    func locationToCoordinates(location: String){
+        
+        CLGeocoder().geocodeAddressString(location){ placemarks, error in
+            guard let placemarks = placemarks else{
+                return
+            }
+            let placemark = placemarks[0]
+            if let location = placemark.location{
+                return location.coordinate
+            }
+        }
+    }
+    
+    func CoordinateToLocation(){
+        
+    }
+    
+    
     
 }

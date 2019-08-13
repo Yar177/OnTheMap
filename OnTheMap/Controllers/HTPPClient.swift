@@ -12,18 +12,7 @@ import Foundation
 
 
 class HTTPClient {
-    static let apiKey = "bdddad458636a0f190525a289c764e96"
-    
-//    struct Auth {
-//        static var accountId = 0
-//        static var requestToken = ""
-//        static var sessionId = ""
-//    }
-    
-    struct Auth {
-        static var keyAccount = ""
-        static var sessionId = ""
-    }
+   
     
     enum Endpoints {
         static let base = "https://onthemap-api.udacity.com/v1/"
@@ -50,8 +39,15 @@ class HTTPClient {
             return URL(string: urlBody)!
         }
     }
-
     
+   
+    
+    struct Auth {
+        static var keyAccount = ""
+        static var sessionId = ""
+    }
+
+   static let apiKey = "bdddad458636a0f190525a289c764e96"
     
     class func getStudentsLocation(completionHandeler: @escaping ([StudentLocationModel]?, Error?)-> Void){
         let task = URLSession.shared.dataTask(with: Endpoints.getStudentsLocation.url){ (data, response, error) in

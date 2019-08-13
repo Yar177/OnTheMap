@@ -258,6 +258,7 @@
                     </view>
                     <connections>
                         <outlet property="mapView" destination="xxH-Fe-m6l" id="2eF-wl-aD2"/>
+                        <outlet property="submitButton" destination="nEM-wW-UOq" id="q0h-BC-awk"/>
                         <outlet property="userUrlText" destination="mLo-Ck-zxX" id="eCk-k7-4kK"/>
                     </connections>
                 </viewController>
