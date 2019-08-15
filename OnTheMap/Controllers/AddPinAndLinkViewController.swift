@@ -10,20 +10,89 @@ import Foundation
 import UIKit
 import MapKit
 
-class AddPinAndLinkViewController: UIViewController{
+class AddPinAndLinkViewController: UIViewController, UITextFieldDelegate{
     
     @IBOutlet weak var userUrlText: UITextField!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var submitButton: UIButton!
     
-    var location = "Rochester, New York"
+    var userLocation = "New York, New York"
+    let newPin = MKPointAnnotation()
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         submitButton.isEnabled = false
+        submitButton.alpha = 0.5
+        let addPin = UILongPressGestureRecognizer(target: self, action: #selector(longClick(sender:)))
+        mapView.addGestureRecognizer(addPin)
+        userUrlText.delegate = self
     }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        addressToCoordinates(userLocation) {location in
+          self.mapView.setRegion(MKCoordinateRegion(center: location, span: MKCoordinateSpan(latitudeDelta: 3.5, longitudeDelta: 3.5)), animated: true)}
+    }
+    
+    @objc func longClick(sender: UIGestureRecognizer){
+        if sender.state == .began {
+            let pickedLocation = mapView.convert(sender.location(in: mapView), toCoordinateFrom: mapView)
+            addNewPin(location: pickedLocation)
+            
+        }
+    }
+    
+    func addressToCoordinates(_ location: String, completion: @escaping (CLLocationCoordinate2D) -> Void) {
+        let geocoder = CLGeocoder()
+        geocoder.geocodeAddressString(location) { marks, error in
+            guard let marks = marks else {
+                completion(kCLLocationCoordinate2DInvalid)
+                return
+            }
+            let mark = marks[0]
+            if let location = mark.location {
+                completion(location.coordinate)
+                return} }
+        }
+    
+    func coordinatesToAddress(location: CLLocationCoordinate2D, completion: @escaping (CLPlacemark?, Error?) -> Void){
+        let loc = CLLocation.init(latitude: location.latitude, longitude: location.longitude)
+        CLGeocoder().reverseGeocodeLocation(loc, completionHandler: {(marks: [CLPlacemark]?, error: Error?) in
+            guard let marks = marks else {
+                completion(nil, error)
+                return
+            }
+            let mark = marks[0]
+            print(marks)
+            completion(mark, nil)
+        })
+    }
+    
+    func addNewPin(location: CLLocationCoordinate2D){
+        mapView.removeAnnotation(newPin)
+        coordinatesToAddress(location: location) { address, error in
+            guard let address = address else {
+                return
+            }
+            if let pickedAdress = address.administrativeArea {
+                AddNewLocationModel.user.mapString = pickedAdress
+            }
+            let a = String(describing: address).components(separatedBy: ",")
+            print(a)
+            self.newPin.title = a[2]
+        }
+        newPin.coordinate = location
+        mapView.addAnnotation(newPin)
+            self.mapView.setRegion(MKCoordinateRegion(center: newPin.coordinate, span: MKCoordinateSpan(latitudeDelta: 3.0, longitudeDelta: 3.0)), animated: true)
+    }
+    
+    
+    
+    
+   
+    
     
     
     @IBAction func canceAction(_ sender: Any) {
@@ -41,18 +110,18 @@ class AddPinAndLinkViewController: UIViewController{
         
     }
     
-    func locationToCoordinates(location: String){
-        
-        CLGeocoder().geocodeAddressString(location){ placemarks, error in
-            guard let placemarks = placemarks else{
-                return
-            }
-            let placemark = placemarks[0]
-            if let location = placemark.location{
-                return location.coordinate
-            }
-        }
-    }
+//    func locationToCoordinates(location: String){
+//
+//        CLGeocoder().geocodeAddressString(location){ placemarks, error in
+//            guard let placemarks = placemarks else{
+//                return
+//            }
+//            let placemark = placemarks[0]
+//            if let location = placemark.location{
+//                return location.coordinate
+//            }
+//        }
+//    }
     
     func CoordinateToLocation(){
         

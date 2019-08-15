@@ -9,7 +9,7 @@
 
 import Foundation
 
-struct NewLocationModel: Codable {
+struct NewLocationModelDelete: Codable {
     
     var uniqueKey: String
     var firstName: String

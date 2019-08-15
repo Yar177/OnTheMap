@@ -20,10 +20,13 @@
 		4A041EE72301D43B00E3AFE4 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A041EE62301D43B00E3AFE4 /* LoginModel.swift */; };
 		4A041EE92301D5F900E3AFE4 /* LoginResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A041EE82301D5F800E3AFE4 /* LoginResponseModel.swift */; };
 		4A041EEB2301DA8600E3AFE4 /* UserInformationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A041EEA2301DA8600E3AFE4 /* UserInformationModel.swift */; };
-		4A041EED2301DD5C00E3AFE4 /* NewLocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A041EEC2301DD5C00E3AFE4 /* NewLocationModel.swift */; };
+		4A041EED2301DD5C00E3AFE4 /* NewLocationModelDelete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A041EEC2301DD5C00E3AFE4 /* NewLocationModelDelete.swift */; };
 		4A041EEF2301DDEB00E3AFE4 /* NewLocationResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A041EEE2301DDEB00E3AFE4 /* NewLocationResponseModel.swift */; };
 		4A041EF12301E32200E3AFE4 /* UpdatedLocationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A041EF02301E32200E3AFE4 /* UpdatedLocationResponse.swift */; };
 		4A041EF32301E88700E3AFE4 /* EndSessionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A041EF22301E88700E3AFE4 /* EndSessionModel.swift */; };
+		4A041EF52305953000E3AFE4 /* AddNewLocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A041EF42305953000E3AFE4 /* AddNewLocationModel.swift */; };
+		4A041EF82305957B00E3AFE4 /* NewLocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A041EF72305957B00E3AFE4 /* NewLocationModel.swift */; };
+		4A041EFB230595D700E3AFE4 /* NewLocationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A041EFA230595D700E3AFE4 /* NewLocationResponse.swift */; };
 		4A80B8C922FB54CB001722E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A80B8C822FB54CB001722E7 /* AppDelegate.swift */; };
 		4A80B8CB22FB54CB001722E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A80B8CA22FB54CB001722E7 /* ViewController.swift */; };
 		4A80B8CE22FB54CB001722E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A80B8CC22FB54CB001722E7 /* Main.storyboard */; };
@@ -54,10 +57,13 @@
 		4A041EE62301D43B00E3AFE4 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		4A041EE82301D5F800E3AFE4 /* LoginResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseModel.swift; sourceTree = "<group>"; };
 		4A041EEA2301DA8600E3AFE4 /* UserInformationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformationModel.swift; sourceTree = "<group>"; };
-		4A041EEC2301DD5C00E3AFE4 /* NewLocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLocationModel.swift; sourceTree = "<group>"; };
+		4A041EEC2301DD5C00E3AFE4 /* NewLocationModelDelete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLocationModelDelete.swift; sourceTree = "<group>"; };
 		4A041EEE2301DDEB00E3AFE4 /* NewLocationResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLocationResponseModel.swift; sourceTree = "<group>"; };
 		4A041EF02301E32200E3AFE4 /* UpdatedLocationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatedLocationResponse.swift; sourceTree = "<group>"; };
 		4A041EF22301E88700E3AFE4 /* EndSessionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndSessionModel.swift; sourceTree = "<group>"; };
+		4A041EF42305953000E3AFE4 /* AddNewLocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewLocationModel.swift; sourceTree = "<group>"; };
+		4A041EF72305957B00E3AFE4 /* NewLocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLocationModel.swift; sourceTree = "<group>"; };
+		4A041EFA230595D700E3AFE4 /* NewLocationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLocationResponse.swift; sourceTree = "<group>"; };
 		4A80B8C522FB54CB001722E7 /* OnTheMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnTheMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A80B8C822FB54CB001722E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A80B8CA22FB54CB001722E7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +93,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A041EF62305954900E3AFE4 /* RequestModels */ = {
+			isa = PBXGroup;
+			children = (
+				4A041EF42305953000E3AFE4 /* AddNewLocationModel.swift */,
+				4A041EF72305957B00E3AFE4 /* NewLocationModel.swift */,
+			);
+			path = RequestModels;
+			sourceTree = "<group>";
+		};
+		4A041EF9230595B100E3AFE4 /* ResponseModel */ = {
+			isa = PBXGroup;
+			children = (
+				4A041EFA230595D700E3AFE4 /* NewLocationResponse.swift */,
+			);
+			path = ResponseModel;
+			sourceTree = "<group>";
+		};
 		4A80B8BC22FB54CB001722E7 = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +198,8 @@
 		4A80B8DF22FB62CC001722E7 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				4A041EF9230595B100E3AFE4 /* ResponseModel */,
+				4A041EF62305954900E3AFE4 /* RequestModels */,
 				4A80B8E122FB632B001722E7 /* StudenModel.swift */,
 				4AEFD52422FC921C005F7971 /* StudentLocationModel.swift */,
 				4AEFD52622FC932A005F7971 /* ResultsModel.swift */,
@@ -182,7 +207,7 @@
 				4A041EE62301D43B00E3AFE4 /* LoginModel.swift */,
 				4A041EE82301D5F800E3AFE4 /* LoginResponseModel.swift */,
 				4A041EEA2301DA8600E3AFE4 /* UserInformationModel.swift */,
-				4A041EEC2301DD5C00E3AFE4 /* NewLocationModel.swift */,
+				4A041EEC2301DD5C00E3AFE4 /* NewLocationModelDelete.swift */,
 				4A041EEE2301DDEB00E3AFE4 /* NewLocationResponseModel.swift */,
 				4A041EF02301E32200E3AFE4 /* UpdatedLocationResponse.swift */,
 				4A041EF22301E88700E3AFE4 /* EndSessionModel.swift */,
@@ -280,12 +305,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A041EE32301B23900E3AFE4 /* AddNewLocationViewController.swift in Sources */,
-				4A041EED2301DD5C00E3AFE4 /* NewLocationModel.swift in Sources */,
+				4A041EED2301DD5C00E3AFE4 /* NewLocationModelDelete.swift in Sources */,
 				4A041EEB2301DA8600E3AFE4 /* UserInformationModel.swift in Sources */,
 				4A041ED322FD9AF300E3AFE4 /* PinAnnotation.swift in Sources */,
 				4A041EEF2301DDEB00E3AFE4 /* NewLocationResponseModel.swift in Sources */,
 				4A041EE52301B8C000E3AFE4 /* AddPinAndLinkViewController.swift in Sources */,
 				4A041EF12301E32200E3AFE4 /* UpdatedLocationResponse.swift in Sources */,
+				4A041EFB230595D700E3AFE4 /* NewLocationResponse.swift in Sources */,
 				4AEFD52522FC921C005F7971 /* StudentLocationModel.swift in Sources */,
 				9A84C41C22FBCE36000F3CE8 /* LoginViewController.swift in Sources */,
 				4A041EE72301D43B00E3AFE4 /* LoginModel.swift in Sources */,
@@ -300,11 +326,13 @@
 				4A80B8CB22FB54CB001722E7 /* ViewController.swift in Sources */,
 				4A041EE92301D5F900E3AFE4 /* LoginResponseModel.swift in Sources */,
 				4A041EF32301E88700E3AFE4 /* EndSessionModel.swift in Sources */,
+				4A041EF82305957B00E3AFE4 /* NewLocationModel.swift in Sources */,
 				9AA7454A22FBE46A00E6EA92 /* HTPPClient.swift in Sources */,
 				4AEFD52B22FC9AB2005F7971 /* TableViewController.swift in Sources */,
 				4A80B8C922FB54CB001722E7 /* AppDelegate.swift in Sources */,
 				4A041EDA2301A31C00E3AFE4 /* LoginButton.swift in Sources */,
 				4A041EE12301A49A00E3AFE4 /* ViewX.swift in Sources */,
+				4A041EF52305953000E3AFE4 /* AddNewLocationModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
