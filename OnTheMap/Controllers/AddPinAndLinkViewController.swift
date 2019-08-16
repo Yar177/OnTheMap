@@ -26,10 +26,9 @@ class AddPinAndLinkViewController: UIViewController, UITextFieldDelegate{
 //        submitButton.alpha = 0.5
         let addPin = UILongPressGestureRecognizer(target: self, action: #selector(longClick(sender:)))
         mapView.addGestureRecognizer(addPin)
+        activateSubmit(activate: false)
         userUrlText.delegate = self
-        print(newPin)
-        print(newPin.coordinate)
-        print(newPin.coordinate.latitude)
+      
     }
     
     
@@ -88,11 +87,22 @@ class AddPinAndLinkViewController: UIViewController, UITextFieldDelegate{
         newPin.coordinate = location
         mapView.addAnnotation(newPin)
             self.mapView.setRegion(MKCoordinateRegion(center: newPin.coordinate, span: MKCoordinateSpan(latitudeDelta: 3.0, longitudeDelta: 3.0)), animated: true)
+        activateSubmit(activate: true)
     }
     
     
     @IBAction func canceAction(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        AddNewLocationModel.user.mediaURL = userUrlText.text ?? "https://www.udacity.com/"
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        AddNewLocationModel.user.mediaURL = userUrlText.text ?? "https://www.udacity.com/"
+        return true
     }
     
     
@@ -135,6 +145,13 @@ class AddPinAndLinkViewController: UIViewController, UITextFieldDelegate{
         
     }
     
+    func activateSubmit(activate: Bool){
+        submitButton.isEnabled = activate
+        submitButton.alpha = activate ? 1 : 0.2
+        
+    }
+    
+  
     
     
 }
