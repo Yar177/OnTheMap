@@ -36,8 +36,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
         activateUI(subbmitActive: true)
         HTTPClient.startSession(username: userEmail.text!, password: userPassword.text!, completion: loginCompletionHandler(success:error:))
-        
-        
         self.performSegue(withIdentifier: "logging", sender: nil)
     }
     

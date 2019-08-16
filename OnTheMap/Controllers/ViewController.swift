@@ -13,15 +13,25 @@ import MapKit
 class ViewController: UIViewController, MKMapViewDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         mapView.delegate = self
+        
+    }
+    
+    func addPinsToMapView(){
         HTTPClient.getStudentsLocation(completionHandeler: {(data, error) in
             guard let data = data else {return}
             StudentsLocationDataModel.studentsData = data
             self.deployDataToMap()
-        })
+        })    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let allAnnotation = self.mapView.annotations
+        mapView.removeAnnotations(allAnnotation)
+        addPinsToMapView()
     }
     
     func deployDataToMap(){
