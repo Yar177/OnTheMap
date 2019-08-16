@@ -19,6 +19,7 @@ class AddPinAndLinkViewController: UIViewController, UITextFieldDelegate{
     var userLocation = "New York, New York"
     let newPin = MKPointAnnotation()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 //        submitButton.isEnabled = false
@@ -26,6 +27,9 @@ class AddPinAndLinkViewController: UIViewController, UITextFieldDelegate{
         let addPin = UILongPressGestureRecognizer(target: self, action: #selector(longClick(sender:)))
         mapView.addGestureRecognizer(addPin)
         userUrlText.delegate = self
+        print(newPin)
+        print(newPin.coordinate)
+        print(newPin.coordinate.latitude)
     }
     
     
@@ -87,12 +91,6 @@ class AddPinAndLinkViewController: UIViewController, UITextFieldDelegate{
     }
     
     
-    
-    
-   
-    
-    
-    
     @IBAction func canceAction(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -100,16 +98,21 @@ class AddPinAndLinkViewController: UIViewController, UITextFieldDelegate{
     
     
     @IBAction func submit(_ sender: Any) {
-       //  dismiss(animated: true, completion: nil)
-       print("Submit")
+        
+        if !newPin.coordinate.latitude.isZero {
+            
+            print("Submit")
         AddNewLocationModel.user.latitude = newPin.coordinate.latitude
         AddNewLocationModel.user.longitude = newPin.coordinate.longitude
         
         addNewLocationCall{success in
+            print("this is success ------>")
             print("success")
         }
-        
-    
+        dismiss(animated: true, completion: nil)
+            
+            
+     }
     }
     
     func findLocation(location: String){
@@ -121,39 +124,10 @@ class AddPinAndLinkViewController: UIViewController, UITextFieldDelegate{
                 return
             }
             AddNewLocationModel.postResponse = data
+        print("this is data ---->")
         print(data)
         }
     }
-        
-//        if !Flag.dataSubmitted {
-//            APIRequests.postStudentLocation(userGatheredData: StorageController.user) { (data, error) in
-//                guard let data = data else {
-//                    print(error?.localizedDescription ?? "")
-//                    completion(false)
-//                    return
-//                }
-//                print("post response")
-//                Flag.dataSubmitted = true
-//                StorageController.postResponse = data
-//
-//                completion(true)
-//
-//            }
-        
-//        } else {
-//            guard let data = StorageController.postResponse else {
-//                completion(false)
-//                return
-//            }
-//            APIRequests.updateStudentLocation(objectID: data.objectId, userGatheredData: StorageController.user) { (success: Bool, error: Error?) in
-//                if success {
-//                    print("user data updated")
-//                    completion(true)
-//                }
-//                print(error?.localizedDescription ?? "")
-//            }
-//        }
-        
     
     
     
