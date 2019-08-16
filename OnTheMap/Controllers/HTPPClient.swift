@@ -27,7 +27,7 @@ class HTTPClient {
         var urlBody: String {
             switch self {
             case .starthSession: return Endpoints.base + "session"
-            case .getStudentsLocation: return Endpoints.base + "StudentLocation?order=-updatedAt&limit=100"
+            case .getStudentsLocation: return Endpoints.base + "StudentLocation?order=-updatedAt&limit=300"
             case .addNewLocation: return Endpoints.base + "StudentLocation"
             case .updateLocation(let objectID): return Endpoints.base + "StudentLocation/\(objectID)"
             case .getUserInfo: return Endpoints.base + "users/" + Auth.keyAccount
@@ -46,8 +46,6 @@ class HTTPClient {
         static var keyAccount = ""
         static var sessionId = ""
     }
-
-   static let apiKey = "bdddad458636a0f190525a289c764e96"
     
     class func getStudentsLocation(completionHandeler: @escaping ([StudentLocationModel]?, Error?)-> Void){
         let task = URLSession.shared.dataTask(with: Endpoints.getStudentsLocation.url){ (data, response, error) in

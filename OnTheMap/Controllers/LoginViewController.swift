@@ -29,7 +29,36 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
     
     @IBAction func login(_ sender: Any) {
+        if checkForEmptyFields() {
+            alertMessage(alertTitle: "Error", alertMessage: "Please provide credentials")
+            return
+        }
+        activateUI(subbmitActive: true)
+        HTTPClient.startSession(username: userEmail.text!, password: userPassword.text!, completion: loginCompletionHandler(success:error:))
+        
+        
+        //self.performSegue(withIdentifier: "logging", sender: nil)
+    }
+    
+    func checkForEmptyFields() -> Bool {
+        return userEmail.text!.isEmpty || userPassword.text!.isEmpty || userEmail.text == nil || userPassword.text == nil
+    }
+    
+    func loginCompletionHandler(success: Bool, error: Error?){
+        if success {
+            HTTPClient.getUserInfo(completion: populateUserData(response:error:))
+        }else{
+            alertMessage(alertTitle: "Error", alertMessage: "Incorreoct Credentials! \nPlease try again")
+            activateUI(subbmitActive: false)
+        }
+    }
+    
+    func populateUserData(response: UserInformationModel?, error: Error?){
+        guard let response = response else {return}
+        print(response)
+        AddNewLocationModel.user = NewLocationModel(uniqueKey: response.key, firstName: response.firstName, lastName: response.lastName, mapString: "", mediaURL: "", latitude: 0.0, longitude: 0.0)
         self.performSegue(withIdentifier: "logging", sender: nil)
+        
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -46,12 +75,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         userPassword.isEnabled = !subbmitActive
         spinner.isHidden = !subbmitActive
         
-        loginButton.isEnabled = subbmitActive
-        loginButton.alpha = subbmitActive ? 1 : 0.5
+//        loginButton.isEnabled = subbmitActive
+//        loginButton.alpha = subbmitActive ? 1 : 0.5
         
     }
     
-    func alert(_ alertTitle: String, _ alertMessage: String) {
+    func alertMessage(alertTitle: String, alertMessage: String) {
         let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
         
         let action = UIAlertAction(title: "OK", style: .default) { (action) -> Void in
