@@ -63,7 +63,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
             print("annotation ---->")
             print(view.annotation)
             print(view.annotation?.subtitle)
-            if let toOpen = view.annotation?.subtitle ?? "https://www.google.com" {
+            if let toOpen = view.annotation?.subtitle ?? "https://www.udacity.com/" {
                 print("to open -------->")
                 print(toOpen)
                 app.open(URL(string: toOpen)!)
