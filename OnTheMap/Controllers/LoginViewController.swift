@@ -16,21 +16,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var userEmail: LoginTextField!
     @IBOutlet weak var userPassword: LoginTextField!
     @IBOutlet weak var loginButton: LoginButton!
-
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         userEmail.delegate = self
         userPassword.delegate = self
         activateUI(subbmitActive: false)
-     
     }
-    
-    
-    
-
-    
     @IBAction func login(_ sender: Any) {
       //  self.performSegue(withIdentifier: "logging", sender: nil)
         if checkForEmptyFields() {
@@ -39,7 +30,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
         activateUI(subbmitActive: true)
         HTTPClient.startSession(username: userEmail.text!, password: userPassword.text!, completion: loginCompletionHandler(success:error:))
-       
     }
     
     func checkForEmptyFields() -> Bool {
@@ -69,27 +59,22 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
-      
     }
     
     func activateUI(subbmitActive: Bool){
         userEmail.isEnabled = !subbmitActive
         userPassword.isEnabled = !subbmitActive
         spinner.isHidden = !subbmitActive
-        
 //        loginButton.isEnabled = subbmitActive
 //        loginButton.alpha = subbmitActive ? 1 : 0.5
-        
     }
     
     func alertMessage(alertTitle: String, alertMessage: String) {
         let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
-        
         let action = UIAlertAction(title: "OK", style: .default) { (action) -> Void in
             self.dismiss(animated: true, completion: nil)
         }
         alert.addAction(action)
         self.present(alert, animated: true, completion: nil)
     }
-    
 }

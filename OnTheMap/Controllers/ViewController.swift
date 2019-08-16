@@ -13,12 +13,10 @@ import MapKit
 class ViewController: UIViewController, MKMapViewDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
     }
-    
     func addPinsToMapView(){
         let allAnnotation = self.mapView.annotations
         mapView.removeAnnotations(allAnnotation)
@@ -33,7 +31,6 @@ class ViewController: UIViewController, MKMapViewDelegate {
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-       
         addPinsToMapView()
     }
     
@@ -83,6 +80,5 @@ class ViewController: UIViewController, MKMapViewDelegate {
             }
         }
     }
-  
 }
 

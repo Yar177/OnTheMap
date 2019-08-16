@@ -8,19 +8,14 @@
 
 import Foundation
 
-
-
-
 class HTTPClient {
-   
-    
     enum Endpoints {
         static let base = "https://onthemap-api.udacity.com/v1/"
         
         case starthSession
         case getStudentsLocation
         case addNewLocation
-        case updateLocation (String)
+        case updateLocation(String)
         case getUserInfo
         case logout
         
@@ -40,31 +35,33 @@ class HTTPClient {
         }
     }
     
-   
-    
     struct Auth {
         static var keyAccount = ""
         static var sessionId = ""
     }
     
-    class func getStudentsLocation(completionHandeler: @escaping ([StudentLocationModel]?, Error?)-> Void){
-        let task = URLSession.shared.dataTask(with: Endpoints.getStudentsLocation.url){ (data, response, error) in
+    class func getStudentsLocation(completionHandeler: @escaping ([StudentLocationModel]?, Error?) -> Void) {
+        let task = URLSession.shared.dataTask(with: Endpoints.getStudentsLocation.url) { data, _, error in
             guard let data = data else {
                 DispatchQueue.main.async {
                     completionHandeler([], error)
                 }
-                return }
+                return
+            }
             let decoder = JSONDecoder()
             do {
                 let requestObject = try decoder.decode(ResultsModel.self, from: data)
                 DispatchQueue.main.async {
                     completionHandeler(requestObject.results, nil)
-                } } catch {
+                }
+            } catch {
                 DispatchQueue.main.async {
                     completionHandeler([], error)
                     print("error 2")
                     print(error)
-                }} }
+                }
+            }
+        }
         task.resume()
     }
     
@@ -75,8 +72,8 @@ class HTTPClient {
         let requestBody = locationData
         let encoder = JSONEncoder()
         request.httpBody = try! encoder.encode(requestBody)
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data else{
+        let task = URLSession.shared.dataTask(with: request) { data, _, error in
+            guard let data = data else {
                 DispatchQueue.main.async {
                     completion(nil, error)
                 }
@@ -84,25 +81,22 @@ class HTTPClient {
             }
             
             let decoder = JSONDecoder()
-            do{
+            do {
                 let responseObject = try decoder.decode(NewLocationResponseModel.self, from: data)
                 DispatchQueue.main.async {
                     completion(responseObject, nil)
                 }
-            }catch{
+            } catch {
                 DispatchQueue.main.async {
                     completion(nil, error)
                 }
             }
         }
         task.resume()
-        
     }
     
-    
-    
-    class func getUserInfo(completion: @escaping (UserInformationModel?, Error?) -> Void){
-        let task = URLSession.shared.dataTask(with: Endpoints.getUserInfo.url){ data, response, error in
+    class func getUserInfo(completion: @escaping (UserInformationModel?, Error?) -> Void) {
+        let task = URLSession.shared.dataTask(with: Endpoints.getUserInfo.url) { data, _, error in
             
             guard let data = data else {
                 DispatchQueue.main.async {
@@ -112,12 +106,12 @@ class HTTPClient {
             }
             let acutalData = data.subdata(in: 5..<data.count)
             let decoder = JSONDecoder()
-            do{
+            do {
                 let responseObject = try decoder.decode(UserInformationModel.self, from: acutalData)
                 DispatchQueue.main.async {
                     completion(responseObject, nil)
                 }
-            } catch{
+            } catch {
                 DispatchQueue.main.async {
                     completion(nil, error)
                 }
@@ -126,45 +120,43 @@ class HTTPClient {
         task.resume()
     }
     
-    
-    class func logout(complition: @escaping (Bool, Error?) -> Void){
+    class func logout(complition: @escaping (Bool, Error?) -> Void) {
         var request = URLRequest(url: Endpoints.logout.url)
         
         request.httpMethod = "DELETE"
-        var xsrfCookie: HTTPCookie? = nil
+        var xsrfCookie: HTTPCookie?
         let sharedCookieStorage = HTTPCookieStorage.shared
-        for cookie in sharedCookieStorage.cookies!{
-            if cookie.name == "XSRF-TOKEN" {xsrfCookie = cookie}
+        for cookie in sharedCookieStorage.cookies! {
+            if cookie.name == "XSRF-TOKEN" { xsrfCookie = cookie }
         }
         
         if let xsrfCookie = xsrfCookie {
             request.setValue(xsrfCookie.value, forHTTPHeaderField: "X-XSRF-TOKEN")
         }
         
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+        let task = URLSession.shared.dataTask(with: request) { data, _, error in
             guard let data = data else {
                 DispatchQueue.main.async {
-                    return complition(false, error)
+                    complition(false, error)
                 }
                 return
             }
             let acutalData = data.subdata(in: 5..<data.count)
             let jsonDecoder = JSONDecoder()
-            do{
+            do {
                 let responseObject = try jsonDecoder.decode(EndSessionModel.self, from: acutalData)
-                    DispatchQueue.main.async {
-                        self.Auth.sessionId = ""
-                        self.Auth.keyAccount = ""
-                        complition(true, nil)
-                    }
-            }catch{
+                DispatchQueue.main.async {
+                    self.Auth.sessionId = ""
+                    self.Auth.keyAccount = ""
+                    complition(true, nil)
+                }
+            } catch {
                 DispatchQueue.main.async {
                     complition(false, error)
                 }
             }
         }
         task.resume()
-        
     }
     
     class func updateLocation(id: String, userInfo: NewLocationModel, completion: @escaping (Bool, Error?) -> Void) {
@@ -174,20 +166,20 @@ class HTTPClient {
         
         let requestBody = userInfo
         request.httpBody = try! JSONEncoder().encode(requestBody)
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+        let task = URLSession.shared.dataTask(with: request) { data, _, error in
             guard let data = data else {
                 DispatchQueue.main.async {
-                    return completion(false, error)
+                    completion(false, error)
                 }
                 return
             }
             let decoder = JSONDecoder()
-            do{
+            do {
                 let responseObject = try decoder.decode(UpdatedLocationResponse.self, from: data)
                 DispatchQueue.main.async {
                     completion(true, nil)
                 }
-            }catch{
+            } catch {
                 DispatchQueue.main.async {
                     completion(false, error)
                 }
@@ -196,9 +188,7 @@ class HTTPClient {
         task.resume()
     }
     
-    
-    class func startSession(username: String, password: String, completion: @escaping(Bool, Error?) -> Void){
-        
+    class func startSession(username: String, password: String, completion: @escaping (Bool, Error?) -> Void) {
         var request = URLRequest(url: Endpoints.starthSession.url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Accept")
@@ -206,25 +196,24 @@ class HTTPClient {
         let requestBody = LoginModel(udacity: Login(username: username, password: password))
         request.httpBody = try! JSONEncoder().encode(requestBody)
         
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data else{
+        let task = URLSession.shared.dataTask(with: request) { data, _, error in
+            guard let data = data else {
                 DispatchQueue.main.async {
-                    return completion(false, error)
+                    completion(false, error)
                 }
                 return
             }
             
             let acutalData = data.subdata(in: 5..<data.count)
             let deconder = JSONDecoder()
-            do{
+            do {
                 let responseObject = try deconder.decode(LoginResponseModel.self, from: acutalData)
                 DispatchQueue.main.async {
                     self.Auth.sessionId = responseObject.session.id
                     self.Auth.keyAccount = responseObject.account.key
                     completion(true, nil)
                 }
-            }
-            catch{
+            } catch {
                 DispatchQueue.main.async {
                     completion(false, error)
                 }
@@ -232,13 +221,4 @@ class HTTPClient {
         }
         task.resume()
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }

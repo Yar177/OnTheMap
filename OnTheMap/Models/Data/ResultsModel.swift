@@ -8,11 +8,9 @@
 
 import Foundation
 
-
 struct ResultsModel: Codable {
-    
     let results: [StudentLocationModel]
-    
+
     enum CodingKeys: String, CodingKey {
         case results
     }

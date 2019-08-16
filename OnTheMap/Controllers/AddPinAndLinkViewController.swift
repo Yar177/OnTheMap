@@ -15,11 +15,8 @@ class AddPinAndLinkViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var userUrlText: UITextField!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var submitButton: UIButton!
-    
     var userLocation: String = ""
     let newPin = MKPointAnnotation()
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 //        submitButton.isEnabled = false
@@ -28,25 +25,18 @@ class AddPinAndLinkViewController: UIViewController, UITextFieldDelegate {
         mapView.addGestureRecognizer(addPin)
         activateSubmit(activate: false)
         userUrlText.delegate = self
-      
     }
-    
-    
     override func viewWillAppear(_ animated: Bool) {
-        
         if userLocation.isEmpty{
             userLocation = "New York, New York"
         }
-        
         addressToCoordinates(userLocation) {location in
           self.mapView.setRegion(MKCoordinateRegion(center: location, span: MKCoordinateSpan(latitudeDelta: 3.5, longitudeDelta: 3.5)), animated: true)}
     }
-    
     @objc func longClick(sender: UIGestureRecognizer){
         if sender.state == .began {
             let pickedLocation = mapView.convert(sender.location(in: mapView), toCoordinateFrom: mapView)
             addNewPin(location: pickedLocation)
-            
         }
     }
     
@@ -62,7 +52,6 @@ class AddPinAndLinkViewController: UIViewController, UITextFieldDelegate {
                 completion(location.coordinate)
                 return} }
         }
-    
     func coordinatesToAddress(location: CLLocationCoordinate2D, completion: @escaping (CLPlacemark?, Error?) -> Void){
         let loc = CLLocation.init(latitude: location.latitude, longitude: location.longitude)
         CLGeocoder().reverseGeocodeLocation(loc, completionHandler: {(marks: [CLPlacemark]?, error: Error?) in
@@ -75,7 +64,6 @@ class AddPinAndLinkViewController: UIViewController, UITextFieldDelegate {
             completion(mark, nil)
         })
     }
-    
     func addNewPin(location: CLLocationCoordinate2D){
         mapView.removeAnnotation(newPin)
         coordinatesToAddress(location: location) { address, error in
@@ -94,8 +82,6 @@ class AddPinAndLinkViewController: UIViewController, UITextFieldDelegate {
             self.mapView.setRegion(MKCoordinateRegion(center: newPin.coordinate, span: MKCoordinateSpan(latitudeDelta: 3.0, longitudeDelta: 3.0)), animated: true)
         activateSubmit(activate: true)
     }
-    
-    
     @IBAction func canceAction(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -109,35 +95,23 @@ class AddPinAndLinkViewController: UIViewController, UITextFieldDelegate {
         AddNewLocationModel.user.mediaURL = userUrlText.text ?? "https://www.udacity.com/"
         return true
     }
-    
-    
-    
     @IBAction func submit(_ sender: Any) {
-        
         if !newPin.coordinate.latitude.isZero {
-            
          print("Submit")
         AddNewLocationModel.user.latitude = newPin.coordinate.latitude
         AddNewLocationModel.user.longitude = newPin.coordinate.longitude
-            
             if userUrlText.text!.isEmpty {
                 AddNewLocationModel.user.mediaURL = "https://www.udacity.com/"
             }
-        
         addNewLocationCall{success in
             print("this is success ------>")
             print("success")
         }
         dismiss(animated: true, completion: nil)
-            
-            
      }
     }
-    
     func findLocation(location: String){
-        
     }
-    
     func addNewLocationCall(completion: @escaping (Bool) -> Void) {      HTTPClient.addNewLocation(locationData: AddNewLocationModel.user){ data, error in
             guard let data = data else {
                 return
@@ -147,20 +121,10 @@ class AddPinAndLinkViewController: UIViewController, UITextFieldDelegate {
         print(data)
         }
     }
-    
-    
-    
     func CoordinateToLocation(){
-        
     }
-    
     func activateSubmit(activate: Bool){
         submitButton.isEnabled = activate
         submitButton.alpha = activate ? 1 : 0.2
-        
     }
-    
-  
-    
-    
 }
