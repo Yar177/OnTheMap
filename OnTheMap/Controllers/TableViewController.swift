@@ -14,16 +14,22 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var refresh: UIBarButtonItem!
     var arrayStudentData = [StudentLocationModel]()
     
     var testArray = ["test11", "test11", "test11", "test11","test11", "test11", "test11", "test11"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         arrayStudentData = StudentsLocationDataModel.studentsData
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+        self.tableView.reloadData()
+    }
+    @IBAction func refresh(_ sender: Any) {
+        arrayStudentData = StudentsLocationDataModel.studentsData
+        self.tableView.reloadData()
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
       return  arrayStudentData.count

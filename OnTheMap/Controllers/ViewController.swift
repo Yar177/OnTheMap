@@ -16,21 +16,24 @@ class ViewController: UIViewController, MKMapViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         mapView.delegate = self
-        
     }
     
     func addPinsToMapView(){
+        let allAnnotation = self.mapView.annotations
+        mapView.removeAnnotations(allAnnotation)
         HTTPClient.getStudentsLocation(completionHandeler: {(data, error) in
             guard let data = data else {return}
             StudentsLocationDataModel.studentsData = data
             self.deployDataToMap()
         })    }
     
+    @IBAction func refresh(_ sender: Any) {
+        addPinsToMapView()
+    }
     override func viewDidAppear(_ animated: Bool) {
-        let allAnnotation = self.mapView.annotations
-        mapView.removeAnnotations(allAnnotation)
+        super.viewDidAppear(true)
+       
         addPinsToMapView()
     }
     

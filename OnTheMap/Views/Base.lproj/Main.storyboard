@@ -28,7 +28,11 @@
                                                 <segue destination="1Nd-cH-nFU" kind="presentation" modalTransitionStyle="flipHorizontal" id="FNl-BH-3uh"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="refresh" image="icon_refresh" id="0ix-3i-Yih"/>
+                                        <barButtonItem key="rightBarButtonItem" title="refresh" image="icon_refresh" id="0ix-3i-Yih">
+                                            <connections>
+                                                <action selector="refresh:" destination="BYZ-38-t0r" id="rVM-6U-TJV"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -74,7 +78,11 @@
                                                 <segue destination="1Nd-cH-nFU" kind="presentation" modalTransitionStyle="crossDissolve" id="qCP-v5-gBV"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="refresh" image="icon_refresh" id="zD2-L6-VQh"/>
+                                        <barButtonItem key="rightBarButtonItem" title="refresh" image="icon_refresh" id="zD2-L6-VQh">
+                                            <connections>
+                                                <action selector="refresh:" destination="gRl-Rh-0R6" id="c0X-zZ-kkI"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -110,6 +118,10 @@
                         <viewLayoutGuide key="safeArea" id="7Fm-bE-1is"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="List View" image="icons8-list-20" id="mdC-1K-gZb"/>
+                    <connections>
+                        <outlet property="refresh" destination="zD2-L6-VQh" id="8az-tM-Q2U"/>
+                        <outlet property="tableView" destination="3hQ-gh-xfe" id="ZgJ-Z8-84Z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bTV-HJ-s9h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
