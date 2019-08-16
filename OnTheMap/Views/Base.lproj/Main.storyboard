@@ -187,7 +187,7 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="locationText" destination="W8j-qJ-epb" id="UiV-cK-P0g"/>
+                        <outlet property="userLocation" destination="rpb-73-2q9" id="UEf-hF-9Dd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wo0-Jm-5fU" userLabel="First Responder" sceneMemberID="firstResponder"/>

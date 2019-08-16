@@ -29,6 +29,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
     
     @IBAction func login(_ sender: Any) {
+      //  self.performSegue(withIdentifier: "logging", sender: nil)
         if checkForEmptyFields() {
             alertMessage(alertTitle: "Error", alertMessage: "Please provide credentials")
             return
@@ -37,7 +38,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         HTTPClient.startSession(username: userEmail.text!, password: userPassword.text!, completion: loginCompletionHandler(success:error:))
         
         
-        //self.performSegue(withIdentifier: "logging", sender: nil)
+        self.performSegue(withIdentifier: "logging", sender: nil)
     }
     
     func checkForEmptyFields() -> Bool {

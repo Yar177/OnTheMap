@@ -10,13 +10,13 @@ import Foundation
 import UIKit
 import MapKit
 
-class AddPinAndLinkViewController: UIViewController, UITextFieldDelegate{
+class AddPinAndLinkViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var userUrlText: UITextField!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var submitButton: UIButton!
     
-    var userLocation = "New York, New York"
+    var userLocation: String = ""
     let newPin = MKPointAnnotation()
     
     
@@ -33,6 +33,11 @@ class AddPinAndLinkViewController: UIViewController, UITextFieldDelegate{
     
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        if userLocation.isEmpty{
+            userLocation = "New York, New York"
+        }
+        
         addressToCoordinates(userLocation) {location in
           self.mapView.setRegion(MKCoordinateRegion(center: location, span: MKCoordinateSpan(latitudeDelta: 3.5, longitudeDelta: 3.5)), animated: true)}
     }
