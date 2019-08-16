@@ -21,12 +21,12 @@
 		4A041EE92301D5F900E3AFE4 /* LoginResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A041EE82301D5F800E3AFE4 /* LoginResponseModel.swift */; };
 		4A041EEB2301DA8600E3AFE4 /* UserInformationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A041EEA2301DA8600E3AFE4 /* UserInformationModel.swift */; };
 		4A041EED2301DD5C00E3AFE4 /* NewLocationModelDelete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A041EEC2301DD5C00E3AFE4 /* NewLocationModelDelete.swift */; };
-		4A041EEF2301DDEB00E3AFE4 /* NewLocationResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A041EEE2301DDEB00E3AFE4 /* NewLocationResponseModel.swift */; };
+		4A041EEF2301DDEB00E3AFE4 /* NewLocationResponseModelDelte.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A041EEE2301DDEB00E3AFE4 /* NewLocationResponseModelDelte.swift */; };
 		4A041EF12301E32200E3AFE4 /* UpdatedLocationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A041EF02301E32200E3AFE4 /* UpdatedLocationResponse.swift */; };
 		4A041EF32301E88700E3AFE4 /* EndSessionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A041EF22301E88700E3AFE4 /* EndSessionModel.swift */; };
 		4A041EF52305953000E3AFE4 /* AddNewLocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A041EF42305953000E3AFE4 /* AddNewLocationModel.swift */; };
 		4A041EF82305957B00E3AFE4 /* NewLocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A041EF72305957B00E3AFE4 /* NewLocationModel.swift */; };
-		4A041EFB230595D700E3AFE4 /* NewLocationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A041EFA230595D700E3AFE4 /* NewLocationResponse.swift */; };
+		4A041EFB230595D700E3AFE4 /* NewLocationResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A041EFA230595D700E3AFE4 /* NewLocationResponseModel.swift */; };
 		4A80B8C922FB54CB001722E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A80B8C822FB54CB001722E7 /* AppDelegate.swift */; };
 		4A80B8CB22FB54CB001722E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A80B8CA22FB54CB001722E7 /* ViewController.swift */; };
 		4A80B8CE22FB54CB001722E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A80B8CC22FB54CB001722E7 /* Main.storyboard */; };
@@ -58,12 +58,12 @@
 		4A041EE82301D5F800E3AFE4 /* LoginResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseModel.swift; sourceTree = "<group>"; };
 		4A041EEA2301DA8600E3AFE4 /* UserInformationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformationModel.swift; sourceTree = "<group>"; };
 		4A041EEC2301DD5C00E3AFE4 /* NewLocationModelDelete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLocationModelDelete.swift; sourceTree = "<group>"; };
-		4A041EEE2301DDEB00E3AFE4 /* NewLocationResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLocationResponseModel.swift; sourceTree = "<group>"; };
+		4A041EEE2301DDEB00E3AFE4 /* NewLocationResponseModelDelte.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLocationResponseModelDelte.swift; sourceTree = "<group>"; };
 		4A041EF02301E32200E3AFE4 /* UpdatedLocationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatedLocationResponse.swift; sourceTree = "<group>"; };
 		4A041EF22301E88700E3AFE4 /* EndSessionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndSessionModel.swift; sourceTree = "<group>"; };
 		4A041EF42305953000E3AFE4 /* AddNewLocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewLocationModel.swift; sourceTree = "<group>"; };
 		4A041EF72305957B00E3AFE4 /* NewLocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLocationModel.swift; sourceTree = "<group>"; };
-		4A041EFA230595D700E3AFE4 /* NewLocationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLocationResponse.swift; sourceTree = "<group>"; };
+		4A041EFA230595D700E3AFE4 /* NewLocationResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLocationResponseModel.swift; sourceTree = "<group>"; };
 		4A80B8C522FB54CB001722E7 /* OnTheMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnTheMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A80B8C822FB54CB001722E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A80B8CA22FB54CB001722E7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -105,7 +105,7 @@
 		4A041EF9230595B100E3AFE4 /* ResponseModel */ = {
 			isa = PBXGroup;
 			children = (
-				4A041EFA230595D700E3AFE4 /* NewLocationResponse.swift */,
+				4A041EFA230595D700E3AFE4 /* NewLocationResponseModel.swift */,
 			);
 			path = ResponseModel;
 			sourceTree = "<group>";
@@ -208,7 +208,7 @@
 				4A041EE82301D5F800E3AFE4 /* LoginResponseModel.swift */,
 				4A041EEA2301DA8600E3AFE4 /* UserInformationModel.swift */,
 				4A041EEC2301DD5C00E3AFE4 /* NewLocationModelDelete.swift */,
-				4A041EEE2301DDEB00E3AFE4 /* NewLocationResponseModel.swift */,
+				4A041EEE2301DDEB00E3AFE4 /* NewLocationResponseModelDelte.swift */,
 				4A041EF02301E32200E3AFE4 /* UpdatedLocationResponse.swift */,
 				4A041EF22301E88700E3AFE4 /* EndSessionModel.swift */,
 			);
@@ -308,10 +308,10 @@
 				4A041EED2301DD5C00E3AFE4 /* NewLocationModelDelete.swift in Sources */,
 				4A041EEB2301DA8600E3AFE4 /* UserInformationModel.swift in Sources */,
 				4A041ED322FD9AF300E3AFE4 /* PinAnnotation.swift in Sources */,
-				4A041EEF2301DDEB00E3AFE4 /* NewLocationResponseModel.swift in Sources */,
+				4A041EEF2301DDEB00E3AFE4 /* NewLocationResponseModelDelte.swift in Sources */,
 				4A041EE52301B8C000E3AFE4 /* AddPinAndLinkViewController.swift in Sources */,
 				4A041EF12301E32200E3AFE4 /* UpdatedLocationResponse.swift in Sources */,
-				4A041EFB230595D700E3AFE4 /* NewLocationResponse.swift in Sources */,
+				4A041EFB230595D700E3AFE4 /* NewLocationResponseModel.swift in Sources */,
 				4AEFD52522FC921C005F7971 /* StudentLocationModel.swift in Sources */,
 				9A84C41C22FBCE36000F3CE8 /* LoginViewController.swift in Sources */,
 				4A041EE72301D43B00E3AFE4 /* LoginModel.swift in Sources */,

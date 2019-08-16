@@ -11,5 +11,5 @@ import Foundation
 
 class AddNewLocationModel {
     static var user = NewLocationModel.init()
-    static var postResponse: NewLocationResponse?
+    static var postResponse: NewLocationResponseModel?
 }

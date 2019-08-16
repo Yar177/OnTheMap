@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct NewLocationResponse: Codable {
+struct NewLocationResponseModel: Codable {
     let createdAt: String
     let objectId: String
     
