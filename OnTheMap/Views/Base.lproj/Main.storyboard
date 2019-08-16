@@ -313,6 +313,10 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="e1e-Uj-AEe">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -333,6 +337,10 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
+                        <outlet property="loginButton" destination="uAX-UT-mu0" id="DKn-PS-hkx"/>
+                        <outlet property="spinner" destination="e1e-Uj-AEe" id="dXo-Lm-aLe"/>
+                        <outlet property="userEmail" destination="NTV-iG-J8j" id="Mjz-Od-NvV"/>
+                        <outlet property="userPassword" destination="cum-ux-o8V" id="NLR-4i-6xC"/>
                         <segue destination="RXg-ZY-ahp" kind="show" identifier="logging" id="htB-sh-ZjE"/>
                     </connections>
                 </viewController>
