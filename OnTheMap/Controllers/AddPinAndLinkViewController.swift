@@ -111,9 +111,13 @@ class AddPinAndLinkViewController: UIViewController, UITextFieldDelegate{
         
         if !newPin.coordinate.latitude.isZero {
             
-            print("Submit")
+         print("Submit")
         AddNewLocationModel.user.latitude = newPin.coordinate.latitude
         AddNewLocationModel.user.longitude = newPin.coordinate.longitude
+            
+            if userUrlText.text!.isEmpty {
+                AddNewLocationModel.user.mediaURL = "https://www.udacity.com/"
+            }
         
         addNewLocationCall{success in
             print("this is success ------>")
