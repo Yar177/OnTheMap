@@ -9,12 +9,6 @@
 /* Begin PBXBuildFile section */
 		4A041ED322FD9AF300E3AFE4 /* PinAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A041ED222FD9AF300E3AFE4 /* PinAnnotation.swift */; };
 		4A041ED522FD9CD300E3AFE4 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A041ED422FD9CD300E3AFE4 /* MapViewController.swift */; };
-		4A041EDA2301A31C00E3AFE4 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A041ED62301A31B00E3AFE4 /* LoginButton.swift */; };
-		4A041EDB2301A31C00E3AFE4 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A041ED72301A31B00E3AFE4 /* GradientView.swift */; };
-		4A041EDC2301A31C00E3AFE4 /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A041ED82301A31C00E3AFE4 /* LoginTextField.swift */; };
-		4A041EDD2301A31C00E3AFE4 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A041ED92301A31C00E3AFE4 /* Colors.swift */; };
-		4A041EDF2301A38200E3AFE4 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A041EDE2301A38200E3AFE4 /* Colors.xcassets */; };
-		4A041EE12301A49A00E3AFE4 /* ViewX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A041EE02301A49A00E3AFE4 /* ViewX.swift */; };
 		4A041EE32301B23900E3AFE4 /* AddNewLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A041EE22301B23900E3AFE4 /* AddNewLocationViewController.swift */; };
 		4A041EE52301B8C000E3AFE4 /* AddPinAndLinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A041EE42301B8C000E3AFE4 /* AddPinAndLinkViewController.swift */; };
 		4A041EE72301D43B00E3AFE4 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A041EE62301D43B00E3AFE4 /* LoginModel.swift */; };
@@ -39,19 +33,18 @@
 		4AEFD52B22FC9AB2005F7971 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEFD52A22FC9AB2005F7971 /* TableViewController.swift */; };
 		4AEFD52E22FCC8DC005F7971 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEFD52D22FCC8DC005F7971 /* Utils.swift */; };
 		9A84C41C22FBCE36000F3CE8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84C41B22FBCE36000F3CE8 /* LoginViewController.swift */; };
-		9AA7454822FBDAB300E6EA92 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AA7454722FBDAB200E6EA92 /* Colors.xcassets */; };
+		9A8F2B952307BF920026D3E3 /* ViewX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8F2B8F2307BF920026D3E3 /* ViewX.swift */; };
+		9A8F2B962307BF920026D3E3 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8F2B902307BF920026D3E3 /* GradientView.swift */; };
+		9A8F2B972307BF920026D3E3 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8F2B912307BF920026D3E3 /* LoginButton.swift */; };
+		9A8F2B982307BF920026D3E3 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A8F2B922307BF920026D3E3 /* Colors.xcassets */; };
+		9A8F2B992307BF920026D3E3 /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8F2B932307BF920026D3E3 /* LoginTextField.swift */; };
+		9A8F2B9A2307BF920026D3E3 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8F2B942307BF920026D3E3 /* Colors.swift */; };
 		9AA7454A22FBE46A00E6EA92 /* HTPPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA7454922FBE46A00E6EA92 /* HTPPClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4A041ED222FD9AF300E3AFE4 /* PinAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinAnnotation.swift; sourceTree = "<group>"; };
 		4A041ED422FD9CD300E3AFE4 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		4A041ED62301A31B00E3AFE4 /* LoginButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginButton.swift; path = "../../../../Downloads/ios-nd-networking-master/TheMovieManagerComplete/TheMovieManager/View/LoginButton.swift"; sourceTree = "<group>"; };
-		4A041ED72301A31B00E3AFE4 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GradientView.swift; path = "../../../../Downloads/ios-nd-networking-master/TheMovieManagerComplete/TheMovieManager/View/GradientView.swift"; sourceTree = "<group>"; };
-		4A041ED82301A31C00E3AFE4 /* LoginTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginTextField.swift; path = "../../../../Downloads/ios-nd-networking-master/TheMovieManagerComplete/TheMovieManager/View/LoginTextField.swift"; sourceTree = "<group>"; };
-		4A041ED92301A31C00E3AFE4 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Colors.swift; path = "../../../../Downloads/ios-nd-networking-master/TheMovieManagerComplete/TheMovieManager/View/Colors.swift"; sourceTree = "<group>"; };
-		4A041EDE2301A38200E3AFE4 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Colors.xcassets; path = "../../../../Downloads/ios-nd-networking-master/TheMovieManagerComplete/TheMovieManager/Assets/Colors.xcassets"; sourceTree = "<group>"; };
-		4A041EE02301A49A00E3AFE4 /* ViewX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewX.swift; path = ../../../SwiftAnimation/SwiftAnimation/graphics/ViewX.swift; sourceTree = "<group>"; };
 		4A041EE22301B23900E3AFE4 /* AddNewLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewLocationViewController.swift; sourceTree = "<group>"; };
 		4A041EE42301B8C000E3AFE4 /* AddPinAndLinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPinAndLinkViewController.swift; sourceTree = "<group>"; };
 		4A041EE62301D43B00E3AFE4 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
@@ -78,7 +71,12 @@
 		4AEFD52A22FC9AB2005F7971 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		4AEFD52D22FCC8DC005F7971 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		9A84C41B22FBCE36000F3CE8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		9AA7454722FBDAB200E6EA92 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Colors.xcassets; path = ../../../../iOSAuth/TheMovieManager/Assets/Colors.xcassets; sourceTree = "<group>"; };
+		9A8F2B8F2307BF920026D3E3 /* ViewX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewX.swift; sourceTree = "<group>"; };
+		9A8F2B902307BF920026D3E3 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		9A8F2B912307BF920026D3E3 /* LoginButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
+		9A8F2B922307BF920026D3E3 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		9A8F2B932307BF920026D3E3 /* LoginTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
+		9A8F2B942307BF920026D3E3 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		9AA7454922FBE46A00E6EA92 /* HTPPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HTPPClient.swift; path = OnTheMap/Controllers/HTPPClient.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -152,16 +150,15 @@
 		4A80B8DB22FB556B001722E7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				4A041EE02301A49A00E3AFE4 /* ViewX.swift */,
-				4A041ED92301A31C00E3AFE4 /* Colors.swift */,
-				4A041ED72301A31B00E3AFE4 /* GradientView.swift */,
-				4A041ED62301A31B00E3AFE4 /* LoginButton.swift */,
-				4A041ED82301A31C00E3AFE4 /* LoginTextField.swift */,
+				9A8F2B942307BF920026D3E3 /* Colors.swift */,
+				9A8F2B922307BF920026D3E3 /* Colors.xcassets */,
+				9A8F2B902307BF920026D3E3 /* GradientView.swift */,
+				9A8F2B912307BF920026D3E3 /* LoginButton.swift */,
+				9A8F2B932307BF920026D3E3 /* LoginTextField.swift */,
+				9A8F2B8F2307BF920026D3E3 /* ViewX.swift */,
 				4A80B8CC22FB54CB001722E7 /* Main.storyboard */,
 				4A80B8D122FB54CC001722E7 /* LaunchScreen.storyboard */,
 				4A80B8CF22FB54CC001722E7 /* Assets.xcassets */,
-				4A041EDE2301A38200E3AFE4 /* Colors.xcassets */,
-				9AA7454722FBDAB200E6EA92 /* Colors.xcassets */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -289,9 +286,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A041EDF2301A38200E3AFE4 /* Colors.xcassets in Resources */,
 				4A80B8D322FB54CC001722E7 /* LaunchScreen.storyboard in Resources */,
-				9AA7454822FBDAB300E6EA92 /* Colors.xcassets in Resources */,
+				9A8F2B982307BF920026D3E3 /* Colors.xcassets in Resources */,
 				4A80B8D022FB54CC001722E7 /* Assets.xcassets in Resources */,
 				4A80B8CE22FB54CB001722E7 /* Main.storyboard in Resources */,
 			);
@@ -305,24 +301,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A041EE32301B23900E3AFE4 /* AddNewLocationViewController.swift in Sources */,
+				9A8F2B972307BF920026D3E3 /* LoginButton.swift in Sources */,
 				4A041EED2301DD5C00E3AFE4 /* NewLocationModelDelete.swift in Sources */,
 				4A041EEB2301DA8600E3AFE4 /* UserInformationModel.swift in Sources */,
 				4A041ED322FD9AF300E3AFE4 /* PinAnnotation.swift in Sources */,
 				4A041EEF2301DDEB00E3AFE4 /* NewLocationResponseModelDelte.swift in Sources */,
 				4A041EE52301B8C000E3AFE4 /* AddPinAndLinkViewController.swift in Sources */,
 				4A041EF12301E32200E3AFE4 /* UpdatedLocationResponse.swift in Sources */,
+				9A8F2B952307BF920026D3E3 /* ViewX.swift in Sources */,
 				4A041EFB230595D700E3AFE4 /* NewLocationResponseModel.swift in Sources */,
 				4AEFD52522FC921C005F7971 /* StudentLocationModel.swift in Sources */,
+				9A8F2B962307BF920026D3E3 /* GradientView.swift in Sources */,
 				9A84C41C22FBCE36000F3CE8 /* LoginViewController.swift in Sources */,
+				9A8F2B992307BF920026D3E3 /* LoginTextField.swift in Sources */,
 				4A041EE72301D43B00E3AFE4 /* LoginModel.swift in Sources */,
 				4AEFD52922FC9491005F7971 /* StudentsLocationDataModel.swift in Sources */,
-				4A041EDB2301A31C00E3AFE4 /* GradientView.swift in Sources */,
 				4A80B8E222FB632B001722E7 /* StudenModel.swift in Sources */,
 				4AEFD52722FC932A005F7971 /* ResultsModel.swift in Sources */,
 				4AEFD52E22FCC8DC005F7971 /* Utils.swift in Sources */,
 				4A041ED522FD9CD300E3AFE4 /* MapViewController.swift in Sources */,
-				4A041EDD2301A31C00E3AFE4 /* Colors.swift in Sources */,
-				4A041EDC2301A31C00E3AFE4 /* LoginTextField.swift in Sources */,
+				9A8F2B9A2307BF920026D3E3 /* Colors.swift in Sources */,
 				4A80B8CB22FB54CB001722E7 /* ViewController.swift in Sources */,
 				4A041EE92301D5F900E3AFE4 /* LoginResponseModel.swift in Sources */,
 				4A041EF32301E88700E3AFE4 /* EndSessionModel.swift in Sources */,
@@ -330,8 +328,6 @@
 				9AA7454A22FBE46A00E6EA92 /* HTPPClient.swift in Sources */,
 				4AEFD52B22FC9AB2005F7971 /* TableViewController.swift in Sources */,
 				4A80B8C922FB54CB001722E7 /* AppDelegate.swift in Sources */,
-				4A041EDA2301A31C00E3AFE4 /* LoginButton.swift in Sources */,
-				4A041EE12301A49A00E3AFE4 /* ViewX.swift in Sources */,
 				4A041EF52305953000E3AFE4 /* AddNewLocationModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
