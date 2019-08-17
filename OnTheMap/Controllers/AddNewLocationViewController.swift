@@ -9,10 +9,11 @@
 import Foundation
 import UIKit
 
-class AddNewLocationViewController: UIViewController{
+class AddNewLocationViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var userLocation: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        userLocation.delegate = self
     }
     @IBAction func cancelAction(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -27,5 +28,8 @@ class AddNewLocationViewController: UIViewController{
             pvc?.present(viewControllerAddPin, animated: true, completion: nil)
         }
     }
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        userLocation.resignFirstResponder()
+        return true
+    }
 }
